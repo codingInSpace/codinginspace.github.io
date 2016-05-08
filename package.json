@@ -2,6 +2,10 @@
   "name": "react-portfolio",
   "version": "1.0.0",
   "description": "portfolio app using react",
+  "repository": {
+		"type": "git",
+		"url": "git://github.com/codingInSpace/react-portfolio.git"
+	}
   "main": "index.html",
   "scripts": {
     "build": "webpack --debug"
