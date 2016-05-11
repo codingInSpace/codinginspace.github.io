@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "portfolio app using react",
   "repository": {
-		"type": "git",
-		"url": "git://github.com/codingInSpace/react-portfolio.git"
-	},
+    "type": "git",
+    "url": "git://github.com/codingInSpace/react-portfolio.git"
+  },
   "main": "index.html",
   "scripts": {
-    "build": "webpack --debug"
+    "build": "webpack --debug",
+    "serve": "webpack-dev-server --progress --colors"
+
   },
   "author": "Jonathan Grangien",
   "license": "MIT",
@@ -22,7 +24,8 @@
     "react-dom": "^15.0.2",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
-    "webpack": "^1.13.0"
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1"
   },
   "devDependencies": {
     "babel-loader": "^6.2.4",
