@@ -10,7 +10,6 @@
   "scripts": {
     "build": "webpack --debug",
     "serve": "webpack-dev-server --progress --colors"
-
   },
   "author": "Jonathan Grangien",
   "license": "MIT",
@@ -20,9 +19,11 @@
     "babel-preset-react": "^6.5.0",
     "babelify": "^7.3.0",
     "immutable": "^3.8.1",
+    "material-ui": "^0.15.0",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
     "react-redux": "^4.4.5",
+    "react-tap-event-plugin": "^1.0.0",
     "redux": "^3.5.2",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
