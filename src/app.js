@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import injectTapEventPlugin from 'react-tap-event-plugin';
+import { render } from 'react-dom';
+
 import {deepOrange500} from 'material-ui/styles/colors';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 import AppBarHeader from './components/header';
 import ProjectsGallery from './components/projectsgallery';
-import { render } from 'react-dom';
+
 import { createStore } from 'redux';
 import reducer from './redux/reducer';
 import { Provider } from 'react-redux';
