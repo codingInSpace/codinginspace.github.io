@@ -9,11 +9,12 @@
   "main": "index.html",
   "scripts": {
     "build": "webpack --debug",
-    "serve": "webpack-dev-server --progress --colors"
+    "serve": "webpack-dev-server --progress --colors --hot --config ./webpack.config.js"
   },
   "author": "Jonathan Grangien",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.12.0",
     "babel-core": "^6.8.0",
     "babel-loader": "^6.2.4",
     "babel-preset-react": "^6.5.0",
