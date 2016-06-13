@@ -13,8 +13,8 @@ export default class ProjectsGallery extends React.Component {
 	render() {
 		var childElements = this.props.projects.map(function(elem){
 			return (
-				<li className="image-element-class" key={elem.id}>
-					<img src={elem.src} />
+				<li className="project-element" key={elem.id}>
+					<img src={elem.src}/>
 				</li>
 			);
 		});
