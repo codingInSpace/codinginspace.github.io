@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { render } from 'react-dom';
 
-import {deepOrange500} from 'material-ui/styles/colors';
+import {deepPurple500} from 'material-ui/styles/colors';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -17,7 +17,7 @@ import "!style!css!sass!./stylesheets/main.scss";
 
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: deepOrange500,
+    primary1Color: deepPurple500,
   },
 });
 
