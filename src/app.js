@@ -9,13 +9,13 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import AppBarHeader from './components/header';
-import ProjectsGallery from './components/projectsgallery';
+import ProjectsGallery from './containers/projectsgallery';
 
 import { createStore } from 'redux';
 import reducer from './redux/reducer';
 import { Provider } from 'react-redux';
 import "!style!css!sass!./stylesheets/main.scss";
-//import * as projects from './components/projects';
+import projects from './data/projects.js';
 
 const muiTheme = getMuiTheme({
   palette: {
@@ -23,57 +23,35 @@ const muiTheme = getMuiTheme({
   },
 });
 
-//var projects = [
-	//{
-		//id: 1,
-		//src: "public/cat1.jpg"
-	//},
-	//{
-		//id: 2,
-		//src: "public/cat2.jpg"
-	//}
-//];
+const initialState = {
+	projects
+};
 
-const store = createStore(reducer);
+const store = createStore(reducer, initialState,
+	window.devToolsExtension && window.devToolsExtension()
+);
 
 class App extends React.Component {
-	constructor() {
-		super();
-		this.state = { data: [{id: 1, src: "public/cat1.jpg"}] };
-	}
-
-	loadProjects() {
-		let that = this;
-		
-		axios.get('src/data/projects.json')
-			.then(function (response) {
-				console.log("got " + response);
-				var newData = that.state.data.concat([response.data]); 
-				that.setState({ data: newData })
-				console.log("new state:" + that.state.data);
-			});
-			//.catch(function (response) {
-				//console.log("caught " + response);
-		//});
-			
-	}
-
-	componentDidMount() {
-		console.log("loading projects");
-		this.loadProjects();
-	}
-
 	render() {
 		return (
 			<MuiThemeProvider muiTheme={muiTheme}>
 			<div>
 				<AppBarHeader/>
-				<ProjectsGallery projects={this.state.data}/>
+				<ProjectsGallery projects={store.getState()}/>
 			</div>
 			</MuiThemeProvider>
 		);
 	}
 }
+
+// Log the initial state
+console.log(store.getState())
+
+// Every time the state changes, log it
+// Note that subscribe() returns a function for unregistering the listener
+let unsubscribe = store.subscribe(() =>
+  console.log(store.getState())
+)
 
 injectTapEventPlugin();
 ReactDOM.render(
