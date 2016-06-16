@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import Masonry from 'react-masonry-component';
 import { connect } from 'react-redux';
 import { loadProjects } from '../redux/actions.js';
+import ProjectElement from '../components/ProjectElement';
 
 var masonryOptions = {
     transitionDuration: 150
@@ -22,9 +23,7 @@ class ProjectsGallery extends React.Component {
 	render() {
 		var childElements = this.props.projects.map(function(elem){
 			return (
-				<li className="project-element" key={elem.id}>
-					<img src={elem.src}/>
-				</li>
+				<ProjectElement elem={elem} key={elem.id} />
 			);
 		});
 
