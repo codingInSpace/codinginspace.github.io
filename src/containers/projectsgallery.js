@@ -5,7 +5,8 @@ import { loadProjects } from '../redux/actions.js';
 import ProjectElement from '../components/ProjectElement';
 
 var masonryOptions = {
-    transitionDuration: 150
+    transitionDuration: 150,
+    gutter: 20
 };
 
 class ProjectsGallery extends React.Component {
