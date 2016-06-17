@@ -1,4 +1,4 @@
-$titleBgColor: rgba(26, 13, 26, 0.9);
+$titleBgColor: #6a496a;
 $titleTextColor: #fff;
 $borderColor: #fff;
 
@@ -25,6 +25,7 @@ body {
 	background-color: $titleBgColor;
 
 	.title {
+		border-top: 0.5px solid $borderColor;
 		color: $titleTextColor;
 
 		p {
