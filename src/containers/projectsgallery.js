@@ -17,10 +17,6 @@ class ProjectsGallery extends React.Component {
 		//console.log(this.props.projects);
 	}
 
-	handleClick() {
-		console.log("hej")
-	}
-
 	render() {
 		var childElements = this.props.projects.map(function(elem){
 			return (
@@ -29,15 +25,16 @@ class ProjectsGallery extends React.Component {
 		});
 
 		return (
-			<Masonry
-				className={'my-gallery-class'} 
-				elementType={'div'}
-				options={masonryOptions}
-				onClick={this.handleClick}
-				disableImagesLoaded={false}
-			>
-				{childElements}
-			</Masonry>
+			<div className="gallery">
+				<Masonry
+					className={'my-gallery-class'} 
+					elementType={'div'}
+					options={masonryOptions}
+					disableImagesLoaded={false}
+				>
+					{childElements}
+				</Masonry>
+			</div>
 		);
 	}
 }

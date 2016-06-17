@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
-import AppBar from 'material-ui/AppBar';
+import { Grid, Row, Col } from 'react-bootstrap';
 
-export default class AppBarHeader extends Component {
+class Header extends Component {
   render() {
 		return (
 			<header>
-				<AppBar
-					title="Jonathan Grangien"
-					iconClassNameRight="muidocs-icon-navigation-expand-more"
-				/>
+				<Row>
+					<Col sm={6} smOffset={3}>
+						<p>Hej jag heter jonathan :D</p>
+					</Col>
+				</Row>
 			</header>
 		);
 	}
 }
 
-//export default AppBarHeader;
+export default Header

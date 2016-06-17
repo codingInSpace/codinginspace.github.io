@@ -15,6 +15,20 @@ body {
 	line-height: 20px;
 }
 
+header {
+	background-color: rgba(30, 30, 30, 0.8);
+	padding: 30px;
+
+	p {
+		text-align: center;
+		color: #fff;
+	}
+}
+
+.gallery {
+	margin-top: 50px;
+}
+
 .project-element {
 	list-style-type: none;
 	border: 5px solid $borderColor;
@@ -31,7 +45,7 @@ body {
 		p {
 			font-size: 20px;
 			text-align: center;
-			padding: 10px;
+			padding: 20px;
 		}
 
 		.tag {

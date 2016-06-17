@@ -8,7 +8,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import AppBarHeader from './components/header';
+import Header from './components/header';
 import ProjectsGallery from './containers/projectsgallery';
 
 import { createStore } from 'redux';
@@ -16,6 +16,8 @@ import reducer from './redux/reducer';
 import { Provider } from 'react-redux';
 import "!style!css!sass!./stylesheets/main.scss";
 import projects from './data/projects.js';
+
+import { Grid } from 'react-bootstrap';
 
 const muiTheme = getMuiTheme({
   palette: {
@@ -36,8 +38,10 @@ class App extends React.Component {
 		return (
 			<MuiThemeProvider muiTheme={muiTheme}>
 			<div>
-				<AppBarHeader/>
-				<ProjectsGallery projects={store.getState()}/>
+				<Header/>
+				<Grid>
+					<ProjectsGallery projects={store.getState()}/>
+				</Grid>
 			</div>
 			</MuiThemeProvider>
 		);
