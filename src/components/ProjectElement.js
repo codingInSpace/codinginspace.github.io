@@ -1,18 +1,20 @@
 import React from 'react';
+import uid from '../data/uniqueIdHack';
 
 class ProjectElement extends React.Component {
 	render() {
-		const tags = this.props.elem.tags.map(function (tag) {
+		const elem = this.props.elem;
+		const tags = elem.tags.map((tag) => {
 			return (
-				<span className="tag">{tag}</span>
+				<span className="tag" key={uid()}>{tag}</span>
 			);
 		});
 
 		return (
 			<li className="project-element">
-				<img src={this.props.elem.src}/>
+				<img src={elem.src}/>
 				<div className="title">
-					<p>{this.props.elem.title}</p>
+					<p>{elem.title}</p>
 					{tags}
 				</div>
 			</li>
