@@ -17,6 +17,15 @@ class ProjectElement extends React.Component {
 				case "OpenGL":
 					bgcolor = "#eeaacc";
 					break;
+				case "WebGL":
+					bgcolor = "#907ea1";
+					break;
+				case "App":
+					bgcolor = "#a96161";
+					break;
+				case "Android":
+					bgcolor = "#a85050";
+					break;
 				default:
 					bgcolor = "#4d4d4d";
 					break;
@@ -33,7 +42,7 @@ class ProjectElement extends React.Component {
 
 		return (
 			<li className="project-element">
-				<img src={elem.src}/>
+				<img src={elem.imgSrc}/>
 				<div className="title">
 					<p>{elem.title}</p>
 					{tags}
