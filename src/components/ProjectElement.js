@@ -5,8 +5,29 @@ class ProjectElement extends React.Component {
 	render() {
 		const elem = this.props.elem;
 		const tags = elem.tags.map((tag) => {
+
+			let bgcolor = '';
+			switch (tag) {
+				case 'Web':
+					bgcolor = "#8764aa";
+					break;
+				case "C++":
+					bgcolor = "#85aad0";
+					break;
+				case "OpenGL":
+					bgcolor = "#eeaacc";
+					break;
+				default:
+					bgcolor = "#4d4d4d";
+					break;
+			}
+
+			const colorStyle = {
+				backgroundColor: bgcolor
+			}
+
 			return (
-				<span className="tag" key={uid()}>{tag}</span>
+				<span className="tag" style={colorStyle} key={uid()}>{tag}</span>
 			);
 		});
 
