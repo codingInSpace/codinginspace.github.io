@@ -1,3 +1,7 @@
+$titleBgColor: rgba(26, 13, 26, 0.9);
+$titleTextColor: #fff;
+$borderColor: #fff;
+
 html {
   font-family: 'Roboto', sans-serif;
 }
@@ -13,16 +17,28 @@ body {
 
 .project-element {
 	list-style-type: none;
-	border: 5px solid #fff;
+	border: 5px solid $borderColor;
 	padding: 0;
 	padding-bottom: 0;
 	font-size: 0px;
 	line-height: 0px;
-}
+	background-color: $titleBgColor;
 
-.test-class {
-	color: blue;
-	div {
-		padding: 0;
+	.title {
+		color: $titleTextColor;
+
+		p {
+			font-size: 20px;
+			text-align: center;
+			padding: 10px;
+		}
+
+		.tag {
+			font-size: 13px;
+			line-height: 20px;
+			padding: 0px 5px;
+			float: right;
+		}
 	}
 }
+
