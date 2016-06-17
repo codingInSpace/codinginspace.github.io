@@ -1,5 +1,5 @@
 import React from 'react';
-import uid from '../data/uniqueIdHack';
+import uid from '../utils/uniqueIdHack';
 
 class ProjectElement extends React.Component {
 	render() {
