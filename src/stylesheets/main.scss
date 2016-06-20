@@ -1,6 +1,7 @@
 $titleBgColor: #6a9587;
 $titleTextColor: #fff;
 $borderColor: #fff;
+$imgBorderColor: #ccffcc;
 
 html {
   font-family: 'Roboto', sans-serif;
@@ -21,6 +22,12 @@ header {
 	p {
 		text-align: center;
 		color: #000;
+	}
+
+	img {
+		margin-top: 10vh;
+		border-radius: 50%;
+		border: 10px solid $imgBorderColor;
 	}
 }
 

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Grid, Col } from 'react-bootstrap';
+import { Grid, Col, Image } from 'react-bootstrap';
 
 class Header extends Component {
   render() {
 		return (
 			<header>
-				<Col sm={6} smOffset={3}>
-					<p>Hej jag heter jonathan :D</p>
+				<Col xs={8} xsOffset={2} sm={4} smOffset={4}>
+					<Image src="public/jonathan.png" circle responsive/>
 				</Col>
 			</header>
 		);
