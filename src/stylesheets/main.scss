@@ -7,22 +7,20 @@ html {
 }
 
 body {
-	/*https://www.flickr.com/photos/triplea4/15042634190/*/
-	background-image: url("/public/mountains.jpg");
-	background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+	background-color: rgba(30, 30, 30, 0.1);
 	font-size: 13px;
 	line-height: 20px;
 }
 
 header {
-	background-color: rgba(30, 30, 30, 0.8);
-	padding: 30px;
+	/*https://www.flickr.com/photos/triplea4/15042634190/*/
+	background: url("/public/mountains.jpg") center no-repeat;
+  height: 100vh;
+  width: 100%;
 
 	p {
 		text-align: center;
-		color: #fff;
+		color: #000;
 	}
 }
 
