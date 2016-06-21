@@ -10,6 +10,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import Header from './components/header';
 import ProjectsGallery from './containers/projectsgallery';
+import Footer from './components/Footer';
 
 import { createStore } from 'redux';
 import reducer from './redux/reducer';
@@ -42,6 +43,7 @@ class App extends React.Component {
 				<Grid>
 					<ProjectsGallery projects={store.getState()}/>
 				</Grid>
+				<Footer/>
 			</div>
 			</MuiThemeProvider>
 		);
