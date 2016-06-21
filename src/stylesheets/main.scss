@@ -1,6 +1,7 @@
-$titleBgColor: #6a9587;
+$bgBright: #fff;
+$titleBgColor: #ccffcc;
 $titleTextColor: #fff;
-$borderColor: #fff;
+$borderColor: #000;
 $imgBorderColor: #ccffcc;
 
 html {
@@ -8,16 +9,23 @@ html {
 }
 
 body {
-	background-color: rgba(30, 30, 30, 0.1);
+	background-color: $bgBright;
+	margin: 0;
 	font-size: 13px;
 	line-height: 20px;
 }
 
 header {
 	/*https://www.flickr.com/photos/triplea4/15042634190/*/
-	background: url("/public/mountains.jpg") center no-repeat;
-  height: 100vh;
-  width: 100%;
+	/*add fixed for stationary effect*/
+	background: url("/public/mountains.jpg") no-repeat center center; 
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	height: 100vh;
+	width: 100%;
+	border-bottom: 5px solid $borderColor;
 
 	p {
 		text-align: center;
@@ -33,6 +41,7 @@ header {
 
 .gallery {
 	margin-top: 50px;
+	position: relative;
 }
 
 .project-element {
