@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
-import { Grid, Col, Image } from 'react-bootstrap';
+import { Grid, Row, Col, Image } from 'react-bootstrap';
 
 class Header extends Component {
   render() {
 		return (
 			<header>
-				<Col xs={8} xsOffset={2} sm={4} smOffset={4}>
-					<Image src="public/jonathan.png" circle responsive/>
-				</Col>
+				<Grid>
+					<Row>
+						<Col xs={8} xsOffset={2} sm={4} smOffset={4} >
+							<Image src="public/jonathan.png" circle responsive/><br></br>
+						</Col>
+					</Row>
+					<Row>
+						<Col sm={6} smOffset={3}>
+							<p className="header-title">Jonathan Grangien</p>
+							<p>I am a MSc. student of Computer Science in Media Technology at Linköpings University, Sweden. I like programming, mainly websites, applications and graphics.</p>
+						</Col>
+					</Row>
+				</Grid>
 			</header>
 		);
 	}

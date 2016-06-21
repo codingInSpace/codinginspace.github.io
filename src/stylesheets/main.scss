@@ -10,10 +10,12 @@ $elementTagColor: #fff;
 /*font sizes*/
 $standardSize: 13px;
 $standardLHeight: 20px;
+$headerTextSize: 20px;
+$headerTextLHeight: 24px;
 $elementTitleSize: 20px;
 
 html {
-  font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -37,7 +39,17 @@ header {
 
 	p {
 		text-align: center;
-		color: #000;
+		font-size: $headerTextSize;
+		line-height: $headerTextLHeight;
+		color: #fff;
+	}
+
+	.header-title {
+		font-size: $headerTextSize*2;
+		line-height: $headerTextLHeight*2;
+		margin-top: 10%;
+		border-top: 0.5px solid rgba(255, 255, 255, 0.4);
+		padding-top: 20px;
 	}
 
 	img {
