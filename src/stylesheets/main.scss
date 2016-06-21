@@ -1,8 +1,16 @@
+/*colors*/
 $bgBright: #fff;
-$titleBgColor: #ccffcc;
-$titleTextColor: #fff;
 $borderColor: #000;
 $imgBorderColor: #ccffcc;
+
+$elementTitleColor: rgba(30, 30, 30, 0.05);
+$elementTitleTextColor: #000;
+$elementTagColor: #fff;
+
+/*font sizes*/
+$standardSize: 13px;
+$standardLHeight: 20px;
+$elementTitleSize: 20px;
 
 html {
   font-family: 'Roboto', sans-serif;
@@ -11,8 +19,8 @@ html {
 body {
 	background-color: $bgBright;
 	margin: 0;
-	font-size: 13px;
-	line-height: 20px;
+	font-size: $standardSize;
+	line-height: $standardLHeight;
 }
 
 header {
@@ -46,11 +54,11 @@ header {
 
 .project-element {
 	list-style-type: none;
-	border: 5px solid $borderColor;
+	border: 3px solid $borderColor;
 	padding: 0;
 	font-size: 0px;
 	line-height: 0px;
-	background-color: $titleBgColor;
+	background-color: $elementTitleColor;
 	width: 300px;
 	margin-bottom: 10px;
 
@@ -60,18 +68,19 @@ header {
 	}
 
 	.title {
-		border-top: 0.5px solid $borderColor;
-		color: $titleTextColor;
+		border-top: 3px solid $borderColor;
+		color: $elementTitleTextColor;
 
 		p {
-			font-size: 20px;
+			font-size: $elementTitleSize;
 			text-align: center;
 			padding: 20px;
 		}
 
 		.tag {
-			font-size: 13px;
-			line-height: 20px;
+			font-size: $standardSize;
+			line-height: $standardLHeight;
+			color: $elementTagColor;
 			padding: 0px 8px;
 			margin: 0 2px 2px 2px;
 			float: right;
