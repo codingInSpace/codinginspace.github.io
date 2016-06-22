@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Image } from 'react-bootstrap';
+import Icon from '@grove/react-font-awesome';
 
 class Header extends Component {
   render() {
@@ -18,6 +19,8 @@ class Header extends Component {
 						</Col>
 					</Row>
 				</Grid>
+
+				<Icon className="header-arrow" name="chevron-down"/>
 			</header>
 		);
 	}
