@@ -2,10 +2,9 @@ const projects = [
 	{
 		"id": "1",
 		"title": "Galaxy Goose",
-		"imgSrc": "public/galaxygoose1.png",
+		"imgSrc": "public/galaxygoose.png",
 		"descShort": "Interactive WebGL application",
 		"descLong": "An experimental WebGL application where you can create and customize planets interactively.",
-		"image": "assets/img/galaxygoose1.png",
 		"teamDesc": "Team of five.",
 		"link": "https://codinginspace.github.io/myGalaxy",
 		"source": "https://github.com/codingInSpace/myGalaxy",
