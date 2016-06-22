@@ -1,7 +1,8 @@
 /*colors*/
 $bgBright: #fff;
-$borderColor: #000;
-$imgBorderColor: #ccffcc;
+$darkColor:  #1f2d2d;
+$borderColor: $darkColor;
+$headerImgBorderColor: $darkColor;
 
 $elementTitleColor: rgba(30, 30, 30, 0.05);
 $elementTitleTextColor: #000;
@@ -35,7 +36,7 @@ header {
   background-size: cover;
 	height: 100vh;
 	width: 100%;
-	border-bottom: 3px solid $borderColor;
+	border-bottom: 1px solid $borderColor;
 
 	p {
 		text-align: center;
@@ -55,7 +56,7 @@ header {
 	img {
 		margin-top: 10vh;
 		border-radius: 50%;
-		border: 10px solid $imgBorderColor;
+		border: 7px solid $headerImgBorderColor;
 	}
 }
 
@@ -73,7 +74,7 @@ header {
 	line-height: 0px;
 	background-color: $elementTitleColor;
 	width: 300px;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 
 	img {
 		width: 100%;
@@ -81,7 +82,7 @@ header {
 	}
 
 	.title {
-		border-top: 3px solid $borderColor;
+		border-top: 1px solid transparentize($borderColor, 0.4);
 		color: $elementTitleTextColor;
 
 		p {
@@ -106,8 +107,8 @@ footer {
 	position: relative;
 	width: 100%;
 	min-height: 25vh;
-	border-top: 3px solid $borderColor;
-	background-color: rgba(30, 30, 30, 0.8);
+	border-top: 1px solid $borderColor;
+	background-color: $darkColor;
 
 	p {
 		margin-top: 10%;

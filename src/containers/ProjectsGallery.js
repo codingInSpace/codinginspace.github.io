@@ -6,7 +6,7 @@ import ProjectElement from '../components/ProjectElement';
 
 var masonryOptions = {
     transitionDuration: 150,
-    gutter: 10,
+    gutter: 20,
     columnWidth: 300,
     fitWidth: true,
     itemSelector: ".project-element"
