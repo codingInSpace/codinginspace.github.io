@@ -5,7 +5,7 @@ import Icon from '@grove/react-font-awesome';
 class Header extends Component {
   render() {
 		return (
-			<header>
+			<header id="top">
 				<Grid>
 					<Row>
 						<Col xs={8} xsOffset={2} sm={4} smOffset={4} >

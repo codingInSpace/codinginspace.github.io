@@ -15,6 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "@grove/react-font-awesome": "^1.1.5",
+    "anchorate": "^1.0.1",
     "axios": "^0.12.0",
     "babel-core": "^6.8.0",
     "babel-loader": "^6.2.4",
@@ -30,6 +31,7 @@
     "react-dom": "^15.0.2",
     "react-masonry-component": "^4.0.4",
     "react-redux": "^4.4.5",
+    "react-router": "^2.5.0",
     "react-tap-event-plugin": "^1.0.0",
     "redux": "^3.5.2",
     "webpack": "^1.13.0",

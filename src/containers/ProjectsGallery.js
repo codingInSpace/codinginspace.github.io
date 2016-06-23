@@ -29,6 +29,7 @@ class ProjectsGallery extends React.Component {
 
 		return (
 				<Masonry
+					id={"projects"}
 					className={'gallery'} 
 					elementType={'div'}
 					options={masonryOptions}
