@@ -1,6 +1,17 @@
 const projects = [
 	{
 		"id": "1",
+		"title": "TowerVR",
+		"imgSrc": "public/towervr1.jpg",
+		"descShort": "Multiplayer VR Game for the Google Cardboard",
+		"descLong": "Pioneering game technology",
+		"teamDesc": "Team of seven",
+		"link": "",
+		"source": "https://github.com/AndroidHMD/TowerVR",
+		"tags": [ "Unity", "VR" ]
+	},
+	{
+		"id": "2",
 		"title": "Galaxy Goose",
 		"imgSrc": "public/galaxygoose.png",
 		"descShort": "Interactive WebGL application",
@@ -11,7 +22,7 @@ const projects = [
 		"tags": [ "WebGL" ]
 	},
 	{
-		"id": "2",
+		"id": "3",
 		"title": "SPH fluid sim",
 		"imgSrc": "public/watersim.jpg",
 		"descShort": "3D water simulation",
@@ -22,7 +33,7 @@ const projects = [
 		"tags": [ "C++", "OpenGL" ]
 	},
 	{
-		"id": "3",
+		"id": "4",
 		"title": "Reverbify",
 		"imgSrc": "public/reverbify1.png",
 		"descShort": "Reverb simulation app",
@@ -33,7 +44,7 @@ const projects = [
 		"tags": [ "Web", "App" ]
 	},
 	{
-		"id": "4",
+		"id": "5",
 		"title": "Trappans Personalportal",
 		"imgSrc": "public/portalen.png",
 		"descShort": "Club staff portal",
@@ -44,7 +55,7 @@ const projects = [
 		"tags": [ "Web" ]
 	},
 	{
-		"id": "5",
+		"id": "6",
 		"title": "Mapus",
 		"imgSrc": "public/mapus1.png",
 		"descShort": "Study tool app",

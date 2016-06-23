@@ -26,6 +26,12 @@ class ProjectElement extends React.Component {
 				case "Android":
 					bgcolor = "#a85050";
 					break;
+				case "Unity":
+					bgcolor = "#5e9b8d";
+					break;
+				case "VR":
+					bgcolor = "#5a8dad";
+					break;
 				default:
 					bgcolor = "#4d4d4d";
 					break;
