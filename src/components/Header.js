@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Image } from 'react-bootstrap';
 import Icon from '@grove/react-font-awesome';
+import Waypoint from 'react-waypoint';
 
 class Header extends Component {
+	onEnter() {
+		console.log("entered header")
+	}
+
+	onLeave() {
+		console.log("left header")
+	}
+
   render() {
 		return (
 			<header id="top">
@@ -12,6 +21,10 @@ class Header extends Component {
 							<Image src="public/jonathan.png" circle responsive/><br></br>
 						</Col>
 					</Row>
+					<Waypoint
+						onEnter={this.onEnter}
+						onLeave={this.onLeave}
+					/>
 					<Row>
 						<Col sm={6} smOffset={3}>
 							<p className="header-title">Jonathan Grangien</p>

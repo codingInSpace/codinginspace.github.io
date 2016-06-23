@@ -28,15 +28,15 @@ class ProjectsGallery extends React.Component {
 		});
 
 		return (
-				<Masonry
-					id={"projects"}
-					className={'gallery'} 
-					elementType={'div'}
-					options={masonryOptions}
-					disableImagesLoaded={false}
-				>
-					{childElements}
-				</Masonry>
+			<Masonry
+				id={"projects"}
+				className={'gallery'} 
+				elementType={'div'}
+				options={masonryOptions}
+				disableImagesLoaded={false}
+			>
+				{childElements}
+			</Masonry>
 		);
 	}
 }
