@@ -13,6 +13,8 @@ $standardSize: 13px;
 $standardLHeight: 20px;
 $headerTextSize: 20px;
 $headerTextLHeight: 24px;
+$headerTextSizeSmaller: 12px;
+$headerTextLHeightSmaller: 16px;
 $elementTitleSize: 20px;
 
 html {
@@ -40,8 +42,6 @@ header {
 
 	p {
 		text-align: center;
-		font-size: $headerTextSize;
-		line-height: $headerTextLHeight;
 		color: #fff;
 	}
 
@@ -62,10 +62,8 @@ header {
 	.header-arrow {
 		position: absolute;
 		bottom: 0;
-		left: 49vw;
 		margin-bottom: 3vh;
 		color: transparentize(#fff, 0.85);
-		font-size: 2vw !important;
 		text-align: center;
 	}
 }
@@ -96,6 +94,7 @@ header {
 		color: $elementTitleTextColor;
 
 		p {
+			word-wrap: break-word;
 			font-size: $elementTitleSize;
 			text-align: center;
 			padding: 20px;
@@ -127,3 +126,68 @@ footer {
 	}
 }
 
+@media screen and (min-width: 701px) and (max-width: 845px) {
+	.gallery {
+		margin-left: 30px;
+	}
+}
+
+@media screen and (min-width: 700px) {
+	header {
+		p {
+			font-size: $headerTextSize;
+			line-height: $headerTextLHeight;
+		}
+
+		.header-title {
+			font-size: $headerTextSize*2;
+			line-height: $headerTextLHeight*2;
+		}
+
+		.header-arrow {
+			left: 49vw;
+			font-size: 2vw !important;
+		}
+	}
+}
+
+@media screen and (max-width: 699px) {
+	header {
+		p {
+			font-size: $headerTextSizeSmaller;
+			line-height: $headerTextLHeightSmaller;
+		}
+
+		.header-title {
+			font-size: $headerTextSizeSmaller*2;
+			line-height: $headerTextLHeightSmaller*2;
+		}
+
+		.header-arrow {
+			left: 47vw;
+			font-size: 6vw !important;
+		}
+	}
+
+	.project-element {
+		margin: 0 0 20px 0;
+		width: 45%;
+
+		p, .tag {
+			font-size: 3vw !important;
+		}
+
+		p {
+			line-height: 3vw !important;
+		}
+
+		.tag {
+			padding: 2vw 4px;
+			margin: 0 1px 1px 1px;
+		}
+	}
+
+	.gallery {
+		margin-left: 2%;
+	}
+}

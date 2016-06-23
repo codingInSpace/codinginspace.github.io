@@ -6,9 +6,9 @@ import ProjectElement from '../components/ProjectElement';
 
 var masonryOptions = {
     transitionDuration: 150,
-    gutter: 20,
-    columnWidth: 300,
-    fitWidth: true,
+		gutter: 20,
+		//columnWidth: 300,
+    //fitWidth: true,
     itemSelector: ".project-element"
 };
 
@@ -28,16 +28,14 @@ class ProjectsGallery extends React.Component {
 		});
 
 		return (
-			<div className="gallery">
 				<Masonry
-					className={'my-gallery-class'} 
+					className={'gallery'} 
 					elementType={'div'}
 					options={masonryOptions}
 					disableImagesLoaded={false}
 				>
 					{childElements}
 				</Masonry>
-			</div>
 		);
 	}
 }

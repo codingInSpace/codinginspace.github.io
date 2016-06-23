@@ -47,13 +47,13 @@ class ProjectElement extends React.Component {
 		});
 
 		return (
-			<li className="project-element">
+			<div className="project-element">
 				<img src={elem.imgSrc}/>
 				<div className="title">
 					<p>{elem.title}</p>
 					{tags}
 				</div>
-			</li>
+			</div>
 		);
 	}
 }
