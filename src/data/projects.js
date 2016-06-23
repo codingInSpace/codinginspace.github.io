@@ -34,6 +34,17 @@ const projects = [
 	},
 	{
 		"id": "4",
+		"title": "React portfolio",
+		"imgSrc": "public/portfolio.jpg",
+		"descShort": "React-redux SPA portfolio",
+		"descLong": "",
+		"teamDesc": "Personal project",
+		"link": "#",
+		"source": "https://github.com/codingInSpace/react-portfolio",
+		"tags": [ "Web" ]
+	},
+	{
+		"id": "5",
 		"title": "Reverbify",
 		"imgSrc": "public/reverbify1.png",
 		"descShort": "Reverb simulation app",
@@ -44,7 +55,7 @@ const projects = [
 		"tags": [ "Web", "App" ]
 	},
 	{
-		"id": "5",
+		"id": "6",
 		"title": "Trappans Personalportal",
 		"imgSrc": "public/portalen.png",
 		"descShort": "Club staff portal",
@@ -55,7 +66,7 @@ const projects = [
 		"tags": [ "Web" ]
 	},
 	{
-		"id": "6",
+		"id": "7",
 		"title": "Mapus",
 		"imgSrc": "public/mapus1.png",
 		"descShort": "Study tool app",
