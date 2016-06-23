@@ -28,6 +28,22 @@ body {
 	line-height: $standardLHeight;
 }
 
+.router-navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(30, 30, 30, 0.5);
+	display: block;
+	z-index: 1000;
+
+	span {
+		float: right;
+		padding: 10px 30px;
+		color: #fff;
+	}
+}
+
 header {
 	/*https://www.flickr.com/photos/triplea4/15042634190/*/
 	/*add fixed for stationary effect*/

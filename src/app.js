@@ -8,6 +8,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
+import Navbar from './components/Navbar';
 import Header from './components/Header';
 import ProjectsGallery from './containers/ProjectsGallery';
 import Footer from './components/Footer';
@@ -39,6 +40,7 @@ class App extends React.Component {
 		return (
 			<MuiThemeProvider muiTheme={muiTheme}>
 			<div>
+				<Navbar/>
 				<Header/>
 				<Grid>
 					<Row>
