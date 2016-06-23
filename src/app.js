@@ -18,7 +18,7 @@ import { Provider } from 'react-redux';
 import "!style!css!sass!./stylesheets/main.scss";
 import projects from './data/projects.js';
 
-import { Grid } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 const muiTheme = getMuiTheme({
   palette: {
@@ -41,7 +41,11 @@ class App extends React.Component {
 			<div>
 				<Header/>
 				<Grid>
-					<ProjectsGallery projects={store.getState()}/>
+					<Row>
+						<Col smOffset={1}>
+							<ProjectsGallery projects={store.getState()}/>
+						</Col>
+					</Row>
 				</Grid>
 				<Footer/>
 			</div>

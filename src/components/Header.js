@@ -15,7 +15,7 @@ class Header extends Component {
 					<Row>
 						<Col sm={6} smOffset={3}>
 							<p className="header-title">Jonathan Grangien</p>
-							<p>I am a MSc. student of Computer Science in Media Technology at Linköpings University, Sweden. I like programming, mainly websites, applications and graphics.</p>
+							<p>I am a MSc. student of Computer Science in Media Technology at Linköping University, Sweden. I like programming, mainly websites, applications and graphics.</p>
 						</Col>
 					</Row>
 				</Grid>
