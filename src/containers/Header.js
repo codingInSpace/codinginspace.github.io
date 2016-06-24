@@ -1,17 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Grid, Row, Col, Image } from 'react-bootstrap';
 import Icon from '@grove/react-font-awesome';
 import Waypoint from 'react-waypoint';
+import { connect } from 'react-redux';
+import { updateActive } from '../redux/actions.js';
 
 class Header extends Component {
-	onEnter() {
-		console.log("entered header")
+  onEnter() {
+		if (this.props.activeClass !== "top")
+			this.props.updateClass("top");
 	}
 
-	onLeave() {
-		console.log("left header")
+  onLeave() {
+		if (this.props.activeClass !== "projects")
+			this.props.updateClass("projects");
 	}
-
+	
   render() {
 		return (
 			<header id="top">
@@ -22,8 +26,8 @@ class Header extends Component {
 						</Col>
 					</Row>
 					<Waypoint
-						onEnter={this.onEnter}
-						onLeave={this.onLeave}
+						onEnter={this.onEnter.bind(this)}
+						onLeave={this.onLeave.bind(this)}
 					/>
 					<Row>
 						<Col sm={6} smOffset={3}>
@@ -39,4 +43,22 @@ class Header extends Component {
 	}
 }
 
-export default Header
+Header.propTypes = {
+	updateClass: PropTypes.func.isRequired
+}
+
+const mapStateToProps = (state) => {
+	return { 
+		activeClass: state.activeClass 
+	};
+}
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		updateClass: (newClass) => {
+			dispatch(updateActive(newClass))
+		}
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header)

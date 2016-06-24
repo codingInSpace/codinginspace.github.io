@@ -5,3 +5,11 @@
     //data
   //}
 //}
+
+export function updateActive(className) {
+	return {
+		type: 'UPDATE_ACTIVE',
+		className
+	}
+}
+

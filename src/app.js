@@ -10,10 +10,10 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import Navbar from './components/Navbar';
-import Header from './components/Header';
+import Navbar from './containers/Navbar';
+import Header from './containers/Header';
 import ProjectsGallery from './containers/ProjectsGallery';
-import Footer from './components/Footer';
+import Footer from './containers/Footer';
 
 import { createStore } from 'redux';
 import reducer from './redux/reducer';
@@ -30,7 +30,8 @@ const muiTheme = getMuiTheme({
 });
 
 const initialState = {
-	projects
+	projects,
+	activeClass: "top"
 };
 
 const store = createStore(reducer, initialState,
