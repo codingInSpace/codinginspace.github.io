@@ -22,6 +22,7 @@
     "babel-preset-react": "^6.5.0",
     "babel-runtime": "^6.9.2",
     "babelify": "^7.3.0",
+    "classnames": "^2.2.5",
     "immutable": "^3.8.1",
     "imports-loader": "^0.6.5",
     "material-ui": "^0.15.0",

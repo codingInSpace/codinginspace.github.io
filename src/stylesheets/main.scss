@@ -40,6 +40,11 @@ body {
 	box-shadow: 0 4px 2px -2px rgba(10, 10, 10, 0.8);
 	z-index: 1000;
 
+	&.navtop {
+		background-color: transparent !important;
+		box-shadow: none;
+	}
+
 	span {
 		float: right;
 		padding: 10px 30px;
@@ -48,23 +53,16 @@ body {
 	a {
 		text-decoration: none;
 		font-size: 16px;
+		color: #fff;
 	}
 
 	.active {
 		background-color: rgba(130, 130, 130, 0.2);
 		border-top: 2px solid #fff;
-
-		a {
-			color: #fff;
-		}
 	}
 
 	.inactive {
 		border-top: 2px solid transparent;
-
-		a {
-			color: #edf5ed;
-		}
 	}
 }
 
