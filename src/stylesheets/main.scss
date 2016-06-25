@@ -3,6 +3,8 @@ $bgBright: #fff;
 $darkColor:  #1f2d2d;
 $borderColor: $darkColor;
 $headerImgBorderColor: $darkColor;
+$navbarBgColor: rgba(30, 30, 30, 0.8);
+$navbarActiveBgColor: rgba(30, 30, 30, 0.9);
 
 $elementTitleColor: rgba(30, 30, 30, 0.05);
 $elementTitleTextColor: #000;
@@ -33,14 +35,36 @@ body {
 	top: 0;
 	left: 0;
 	right: 0;
-	background-color: rgba(30, 30, 30, 0.5);
+	background-color: $navbarBgColor;
 	display: block;
+	box-shadow: 0 4px 2px -2px rgba(10, 10, 10, 0.8);
 	z-index: 1000;
 
 	span {
 		float: right;
 		padding: 10px 30px;
-		color: #fff;
+	}
+
+	a {
+		text-decoration: none;
+		font-size: 16px;
+	}
+
+	.active {
+		background-color: rgba(130, 130, 130, 0.2);
+		border-top: 2px solid #fff;
+
+		a {
+			color: #fff;
+		}
+	}
+
+	.inactive {
+		border-top: 2px solid transparent;
+
+		a {
+			color: #edf5ed;
+		}
 	}
 }
 
@@ -70,7 +94,7 @@ header {
 	}
 
 	img {
-		margin-top: 5vh;
+		margin-top: 10vh;
 		border-radius: 50%;
 		border: 7px solid $headerImgBorderColor;
 	}
