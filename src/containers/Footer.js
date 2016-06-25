@@ -21,6 +21,7 @@ class Footer extends Component {
 				<Col sm={6} smOffset={3}>
 					<p>Some boring stuff goes here</p>
 				</Col>
+				<br/>
 				<Waypoint
 					onEnter={this.onEnter.bind(this)}
 					onLeave={this.onLeave.bind(this)}

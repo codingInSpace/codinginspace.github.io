@@ -20,15 +20,17 @@ class Navbar extends Component {
 		return (
 			<div className={navClasses}>
 				<Grid>
-					<span className={contactClass}>
-						<Link to={{ to: "/", hash: "#contact" }}> Contact </Link>
-					</span>
-					<span className={projectsClass}>
-						<Link to={{ to: "/", hash: "#projects" }}> Projects </Link>
-					</span>
-					<span className={topClass}>
-						<Link to={{ to: "/", hash: "#top" }}> Top </Link>
-					</span>
+					<ul>
+						<Link to={{ to: "/", hash: "#top" }}> 
+							<li className={topClass}>Top</li> 
+						</Link>
+						<Link to={{ to: "/", hash: "#projects" }}> 
+							<li className={projectsClass}>Projects </li>
+						</Link>
+						<Link to={{ to: "/", hash: "#contact" }}> 
+							<li className={contactClass}> Contact </li>
+						</Link>
+					</ul>
 				</Grid>
 			</div>
 		);
