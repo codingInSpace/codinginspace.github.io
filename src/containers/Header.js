@@ -4,16 +4,22 @@ import Icon from '@grove/react-font-awesome';
 import Waypoint from 'react-waypoint';
 import { connect } from 'react-redux';
 import { updateActive } from '../redux/actions.js';
+import updatePushState from '../utils/updatePushState';
 
 class Header extends Component {
   onEnter() {
-		if (this.props.activeClass !== "top")
+		if (this.props.activeClass !== "top") {
 			this.props.updateClass("top");
+			updatePushState("#top");
+		}
+
 	}
 
   onLeave() {
-		if (this.props.activeClass !== "projects")
+		if (this.props.activeClass !== "projects") {
 			this.props.updateClass("projects");
+			updatePushState("#projects");
+		}
 	}
 	
   render() {

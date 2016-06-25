@@ -3,16 +3,21 @@ import { Col } from 'react-bootstrap';
 import Waypoint from 'react-waypoint';
 import { connect } from 'react-redux';
 import { updateActive } from '../redux/actions.js';
+import updatePushState from '../utils/updatePushState';
 
 class Footer extends Component {
 	onEnter() {
-		if (this.props.activeClass !== "contact")
+		if (this.props.activeClass !== "contact") {
 			this.props.updateClass("contact");
+			updatePushState("#contact");
+		}
 	}
 
   onLeave() {
-		if (this.props.activeClass !== "projects")
+		if (this.props.activeClass !== "projects") {
 			this.props.updateClass("projects");
+			updatePushState("#projects");
+		}
 	}
 
   render() {
