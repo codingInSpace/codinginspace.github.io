@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { render } from 'react-dom';
 import * as axios from 'axios';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import { anchorate } from 'anchorate';
 
 import {deepPurple500} from 'material-ui/styles/colors';
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -74,14 +72,6 @@ let unsubscribe = store.subscribe(() =>
   console.log(store.getState())
 )
 
-function onUpdate () {
-	anchorate()
-}
-
 injectTapEventPlugin();
-ReactDOM.render(
-  <Router onUpdate={onUpdate} history={browserHistory}>
-  	<Route path="/" component={App}></Route>
-  </Router>,
-document.getElementById('app'));
+ReactDOM.render(<App/>, document.getElementById('app'));
 

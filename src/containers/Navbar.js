@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { Link } from "react-router";
 import { connect } from 'react-redux';
 import { Grid } from 'react-bootstrap';
 import classNames from 'classnames';
@@ -19,7 +18,7 @@ class Navbar extends Component {
   	const topClass = activeClass === "top" ? "active" : "inactive";
 
   	let navClasses = classNames({
-  		"router-navbar": true,
+  		"custom-navbar": true,
   		"navtop": activeClass === "top"
 		});
 
