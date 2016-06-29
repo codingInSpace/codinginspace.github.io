@@ -1,10 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Link } from "react-router";
 import { connect } from 'react-redux';
 import { Grid } from 'react-bootstrap';
 import classNames from 'classnames';
+import { newGotoComponent } from '../redux/actions.js';
 
 class Navbar extends Component {
+	clickHandler(event, idToView) {
+		event.preventDefault();
+		this.props.setGotoComponent(idToView)
+	}
+
   render() {
 
   	const activeClass = this.props.activeClass;
@@ -21,20 +27,24 @@ class Navbar extends Component {
 			<div className={navClasses}>
 				<Grid>
 					<ul>
-						<Link to={{ to: "/", hash: "#top" }}> 
+						<a onClick={(e) => this.clickHandler(e, "top")}> 
 							<li className={topClass}>Top</li> 
-						</Link>
-						<Link to={{ to: "/", hash: "#projects" }}> 
+						</a>
+						<a onClick={(e) => this.clickHandler(e, "projects")}> 
 							<li className={projectsClass}>Projects </li>
-						</Link>
-						<Link to={{ to: "/", hash: "#contact" }}> 
+						</a>
+						<a onClick={(e) => this.clickHandler(e, "contact")}> 
 							<li className={contactClass}> Contact </li>
-						</Link>
+						</a>
 					</ul>
 				</Grid>
 			</div>
 		);
 	}
+}
+
+Navbar.propTypes = {
+	setGotoComponent: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {
@@ -43,5 +53,12 @@ const mapStateToProps = (state) => {
 	};
 }
 
+const mapDispatchToProps = (dispatch) => {
+	return { 
+		setGotoComponent: (comp) => {
+			dispatch(newGotoComponent(comp))
+		}
+	}
+}
 
-export default connect(mapStateToProps, null)(Navbar)
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar)

@@ -1,7 +1,8 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import Masonry from 'react-masonry-component';
 import { connect } from 'react-redux';
-import { loadProjects } from '../redux/actions.js';
+import { wentToComponent } from '../redux/actions.js';
 import ProjectElement from '../components/ProjectElement';
 
 var masonryOptions = {
@@ -12,7 +13,7 @@ var masonryOptions = {
     itemSelector: ".project-element"
 };
 
-class ProjectsGallery extends React.Component {
+class ProjectsGallery extends Component {
 	constructor(props) {
 		super(props);
 		
@@ -20,6 +21,13 @@ class ProjectsGallery extends React.Component {
 		//console.log(this.props.projects);
 	}
 
+	componentDidUpdate() {
+		if (!this.props.gotoComponent.done && this.props.gotoComponent.component === "projects") {
+			ReactDOM.findDOMNode(this).scrollIntoView();
+			this.props.completeGotoComponent();
+		}
+	}
+	
 	render() {
 		var childElements = this.props.projects.map(function(elem){
 			return (
@@ -29,7 +37,8 @@ class ProjectsGallery extends React.Component {
 
 		return (
 			<Masonry
-				id={"projects"}
+				id="projects"
+				ref="projects"
 				className={'gallery'} 
 				elementType={'div'}
 				options={masonryOptions}
@@ -41,16 +50,24 @@ class ProjectsGallery extends React.Component {
 	}
 }
 
+ProjectsGallery.propTypes = {
+	completeGotoComponent: PropTypes.func.isRequired
+}
+
 const mapStateToProps = state => {
 	return { 
-		projects: state.projects 
+		projects: state.projects,
+		gotoComponent: state.gotoComponent
 	};
 }
 
 const mapDispatchToProps = dispatch => {
 	return {
-		loadProjects: projects => dispatch(loadProjects(projects))
-	};
+		completeGotoComponent: () => {
+			dispatch(wentToComponent(null))
+		}
+	}
+
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectsGallery);

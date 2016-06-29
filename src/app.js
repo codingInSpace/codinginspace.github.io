@@ -31,7 +31,11 @@ const muiTheme = getMuiTheme({
 
 const initialState = {
 	projects,
-	activeClass: "top"
+	activeClass: "top",
+	gotoComponent: {
+		done: true,
+		component: null
+	}
 };
 
 const store = createStore(reducer, initialState,

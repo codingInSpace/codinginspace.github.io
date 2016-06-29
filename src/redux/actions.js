@@ -13,3 +13,16 @@ export function updateActive(className) {
 	}
 }
 
+export function newGotoComponent(payload) {
+	return {
+		type: 'NEW_GOTO_COMPONENT',
+		payload
+	}
+}
+
+export function wentToComponent(payload) {
+	return {
+		type: 'WENT_TO_COMPONENT',
+		payload
+	}
+}

@@ -1,16 +1,23 @@
 import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import { Grid, Row, Col, Image } from 'react-bootstrap';
 import Icon from '@grove/react-font-awesome';
 import Waypoint from 'react-waypoint';
 import { connect } from 'react-redux';
-import { updateActive } from '../redux/actions.js';
-import updatePushState from '../utils/updatePushState';
+import { updateActive, wentToComponent } from '../redux/actions.js';
 
 class Header extends Component {
+
+	componentDidUpdate() {
+		if (!this.props.gotoComponent.done && this.props.gotoComponent.component === "top") {
+			ReactDOM.findDOMNode(this).scrollIntoView();
+			this.props.completeGotoComponent();
+		}
+	}
+
   onEnter() {
 		if (this.props.activeClass !== "top") {
 			this.props.updateClass("top");
-			updatePushState("#top");
 		}
 
 	}
@@ -18,13 +25,12 @@ class Header extends Component {
   onLeave() {
 		if (this.props.activeClass !== "projects") {
 			this.props.updateClass("projects");
-			updatePushState("#projects");
 		}
 	}
 	
   render() {
 		return (
-			<header id="top">
+			<header id="top" ref="top">
 				<Grid>
 					<Row>
 						<Col xs={8} xsOffset={2} sm={4} smOffset={4} >
@@ -50,12 +56,14 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-	updateClass: PropTypes.func.isRequired
+	updateClass: PropTypes.func.isRequired,
+	completeGotoComponent: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {
 	return { 
-		activeClass: state.activeClass 
+		activeClass: state.activeClass,
+		gotoComponent: state.gotoComponent
 	};
 }
 
@@ -63,6 +71,10 @@ const mapDispatchToProps = (dispatch) => {
 	return {
 		updateClass: (newClass) => {
 			dispatch(updateActive(newClass))
+		},
+
+		completeGotoComponent: () => {
+			dispatch(wentToComponent(null))
 		}
 	}
 }
