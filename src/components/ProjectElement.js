@@ -1,5 +1,6 @@
 import React from 'react';
 import uid from '../utils/uniqueIdHack';
+import { Card, CardMedia, CardTitle, CardText  } from 'react-toolbox/lib/card';
 
 class ProjectElement extends React.Component {
 	render() {
@@ -48,11 +49,17 @@ class ProjectElement extends React.Component {
 
 		return (
 			<div className="project-element">
-				<img src={elem.imgSrc}/>
-				<div className="title">
-					<p>{elem.title}</p>
-					{tags}
-				</div>
+				<Card style={{width: '100%'}}>
+
+					<img src={elem.imgSrc}/>
+
+					<CardTitle
+						title={elem.title}
+					/>
+				
+				<CardText> {tags} </CardText>
+
+				</Card>
 			</div>
 		);
 	}

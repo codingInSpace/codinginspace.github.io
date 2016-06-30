@@ -8,7 +8,7 @@ $navbarActiveBgColor: rgba(30, 30, 30, 0.9);
 
 $elementTitleColor: rgba(30, 30, 30, 0.05);
 $elementTitleTextColor: #000;
-$elementTagColor: #fff;
+$elementTagTextColor: #fff;
 
 /*font sizes*/
 $standardSize: 13px;
@@ -130,12 +130,6 @@ header {
 }
 
 .project-element {
-	list-style-type: none;
-	border: 3px solid $borderColor;
-	padding: 0;
-	font-size: 0px;
-	line-height: 0px;
-	background-color: $elementTitleColor;
 	width: 300px;
 	margin-bottom: 20px;
 
@@ -144,26 +138,14 @@ header {
 		height: auto;
 	}
 
-	.title {
-		border-top: 1px solid transparentize($borderColor, 0.4);
-		color: $elementTitleTextColor;
-
-		p {
-			word-wrap: break-word;
-			font-size: $elementTitleSize;
-			text-align: center;
-			padding: 20px;
-		}
-
-		.tag {
-			font-size: $standardSize;
-			line-height: $standardLHeight;
-			color: $elementTagColor;
-			padding: 0px 8px;
-			margin: 0 2px 2px 2px;
-			float: right;
-			border-radius: 8px;
-		}
+	.tag {
+		font-size: $standardSize;
+		line-height: $standardLHeight;
+		color: $elementTagTextColor;
+		padding: 0px 8px;
+		margin: 0 2px 2px 2px;
+		float: left;
+		border-radius: 8px;
 	}
 }
 
@@ -228,17 +210,10 @@ footer {
 		margin: 0 0 20px 0;
 		width: 45%;
 
-		p, .tag {
-			font-size: 3vw !important;
-		}
-
-		p {
-			line-height: 3vw !important;
-		}
-
 		.tag {
 			padding: 2vw 4px;
 			margin: 0 1px 1px 1px;
+			font-size: 3vw !important;
 		}
 	}
 
