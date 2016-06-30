@@ -13,16 +13,16 @@ export function updateActive(className) {
 	}
 }
 
-export function newGotoComponent(payload) {
+export function setNodeForScroll(payload) {
 	return {
-		type: 'NEW_GOTO_COMPONENT',
+		type: 'SET_NODE_FOR_SCROLL',
 		payload
 	}
 }
 
-export function wentToComponent(payload) {
+export function scrolledToNode(payload) {
 	return {
-		type: 'WENT_TO_COMPONENT',
+		type: 'SCROLLED_TO_NODE',
 		payload
 	}
 }

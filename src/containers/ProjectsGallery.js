@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import Masonry from 'react-masonry-component';
 import { connect } from 'react-redux';
-import { wentToComponent } from '../redux/actions.js';
+import { scrolledToNode } from '../redux/actions.js';
 import ProjectElement from '../components/ProjectElement';
 
 var masonryOptions = {
@@ -64,7 +64,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 	return {
 		completeGotoComponent: () => {
-			dispatch(wentToComponent(null))
+			dispatch(scrolledToNode(null))
 		}
 	}
 

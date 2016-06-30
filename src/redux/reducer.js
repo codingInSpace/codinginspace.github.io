@@ -11,7 +11,7 @@ export default function reducer(state = {}, action) {
 				gotoComponent: state.gotoComponent
 			}
 
-		case 'NEW_GOTO_COMPONENT':
+		case 'SET_NODE_FOR_SCROLL':
 			return {
 				projects: state.projects,
 				activeClass: state.actveClass,
@@ -21,7 +21,7 @@ export default function reducer(state = {}, action) {
 				}
 			}
 
-		case 'WENT_TO_COMPONENT':
+		case 'SCROLLED_TO_NODE':
 			return {
 				projects: state.projects,
 				activeClass: state.activeClass,

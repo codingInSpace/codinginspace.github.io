@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Grid } from 'react-bootstrap';
 import classNames from 'classnames';
-import { newGotoComponent } from '../redux/actions.js';
+import { setNodeForScroll } from '../redux/actions.js';
 
 class Navbar extends Component {
 	clickHandler(event, idToView) {
@@ -55,7 +55,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return { 
 		setGotoComponent: (comp) => {
-			dispatch(newGotoComponent(comp))
+			dispatch(setNodeForScroll(comp))
 		}
 	}
 }
