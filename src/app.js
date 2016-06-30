@@ -14,7 +14,7 @@ import ProjectsGallery from './containers/ProjectsGallery';
 import Footer from './containers/Footer';
 
 import { createStore } from 'redux';
-import reducer from './redux/reducer';
+import reducers from './redux/reducers';
 import { Provider } from 'react-redux';
 import "!style!css!sass!./stylesheets/main.scss";
 import projects from './data/projects.js';
@@ -36,7 +36,7 @@ const initialState = {
 	}
 };
 
-const store = createStore(reducer, initialState,
+const store = createStore(reducers, initialState,
 	window.devToolsExtension && window.devToolsExtension()
 );
 

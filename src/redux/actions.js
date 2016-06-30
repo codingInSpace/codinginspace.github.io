@@ -6,10 +6,10 @@
   //}
 //}
 
-export function updateActive(className) {
+export function updateActive(payload) {
 	return {
 		type: 'UPDATE_ACTIVE',
-		className
+		payload
 	}
 }
 
