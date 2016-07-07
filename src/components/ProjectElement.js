@@ -2,6 +2,7 @@ import React from 'react';
 import uid from '../utils/uniqueIdHack';
 import { Card, CardMedia, CardTitle, CardText  } from 'react-toolbox/lib/card';
 import Dialog from 'react-toolbox/lib/dialog';
+import { Image } from 'react-bootstrap';
 
 class ProjectElement extends React.Component {
 	state = {
@@ -56,29 +57,31 @@ class ProjectElement extends React.Component {
 			}
 
 			return (
-				<span className="tag" style={colorStyle} key={uid()}>{tag}</span>
+				<span className="project-tag" style={colorStyle} key={uid()}>{tag}</span>
 			);
 		});
 
 		return (
 			<div>
 				<div className="project-element">
-					<Card style={{width: '100%'}} onClidk={this.toggleDialog}>
+					<Card style={{width: '100%'}} onClick={this.toggleDialog}>
 						<img src={elem.imgSrc}/>
 						<CardTitle title={elem.title} />
 						<CardText> {tags} </CardText>
 					</Card>
 				</div>
 
-				<Dialog
+				<Dialog className="project-dialog"
           actions={this.actions}
           active={this.state.dialogActive}
           onEscKeyDown={this.toggleDialog}
           onOverlayClick={this.toggleDialog}
-          title='My awesome dialog'
+          title={elem.title}
         >
-        	<h2>title</h2>
-          <p>Here you can add arbitrary content. Components like Pickers are using dialogs now.</p>
+          <p>{elem.descShort}</p>
+          <Image src={elem.imgSrc} responsive/>
+          <p>{elem.descLong}</p>
+					{tags}
         </Dialog>
 			</div>
 		);
