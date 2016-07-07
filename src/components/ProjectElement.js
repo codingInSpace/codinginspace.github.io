@@ -1,8 +1,21 @@
 import React from 'react';
 import uid from '../utils/uniqueIdHack';
 import { Card, CardMedia, CardTitle, CardText  } from 'react-toolbox/lib/card';
+import Dialog from 'react-toolbox/lib/dialog';
 
 class ProjectElement extends React.Component {
+	state = {
+    dialogActive: false
+  };
+
+	toggleDialog = () => {
+    this.setState({dialogActive: !this.state.dialogActive});
+  }
+
+	actions = [
+    { label: "Close", onClick: this.toggleDialog }
+  ];
+
 	render() {
 		const elem = this.props.elem;
 		const tags = elem.tags.map((tag) => {
@@ -48,18 +61,25 @@ class ProjectElement extends React.Component {
 		});
 
 		return (
-			<div className="project-element">
-				<Card style={{width: '100%'}}>
+			<div>
+				<div className="project-element">
+					<Card style={{width: '100%'}} onClidk={this.toggleDialog}>
+						<img src={elem.imgSrc}/>
+						<CardTitle title={elem.title} />
+						<CardText> {tags} </CardText>
+					</Card>
+				</div>
 
-					<img src={elem.imgSrc}/>
-
-					<CardTitle
-						title={elem.title}
-					/>
-				
-				<CardText> {tags} </CardText>
-
-				</Card>
+				<Dialog
+          actions={this.actions}
+          active={this.state.dialogActive}
+          onEscKeyDown={this.toggleDialog}
+          onOverlayClick={this.toggleDialog}
+          title='My awesome dialog'
+        >
+        	<h2>title</h2>
+          <p>Here you can add arbitrary content. Components like Pickers are using dialogs now.</p>
+        </Dialog>
 			</div>
 		);
 	}
