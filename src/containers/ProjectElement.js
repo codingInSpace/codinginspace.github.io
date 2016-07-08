@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { toggleDialogView } from '../redux/actions.js';
 import uid from '../utils/uniqueIdHack';
 import { Card, CardMedia, CardTitle, CardText  } from 'react-toolbox/lib/card';
 import Dialog from 'react-toolbox/lib/dialog';
 import { Image } from 'react-bootstrap';
 
-class ProjectElement extends React.Component {
+class ProjectElement extends Component {
 	state = {
     dialogActive: false
   };
 
 	toggleDialog = () => {
-    this.setState({dialogActive: !this.state.dialogActive});
+    //this.setState({dialogActive: !this.state.dialogActive});
+
+		this.state = { 
+			dialogActive: !this.state.dialogActive
+		};
+
+		this.props.toggleDialogView(this.state.dialogActive)
   }
 
 	actions = [
@@ -74,6 +82,7 @@ class ProjectElement extends React.Component {
 				<Dialog className="project-dialog"
           actions={this.actions}
           active={this.state.dialogActive}
+          type="normal"
           onEscKeyDown={this.toggleDialog}
           onOverlayClick={this.toggleDialog}
           title={elem.title}
@@ -88,4 +97,22 @@ class ProjectElement extends React.Component {
 	}
 }
 
-export default ProjectElement
+ProjectElement.propTypes = {
+	toggleDialogView: PropTypes.func.isRequired
+}
+
+const mapStateToProps = (state) => {
+	return { 
+		aDialogVisible: state.aDialogVisible
+	};
+}
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		toggleDialogView: (data) => {
+			dispatch(toggleDialogView(data))
+		}
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectElement)

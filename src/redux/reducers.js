@@ -14,6 +14,16 @@ const classReducer = (state = "", action) => {
 	return state;
 }
 
+const dialogReducer = (state = false, action) => {
+	switch(action.type) {
+		case 'TOGGLE_DIALOG_VIEW':
+			state = action.payload
+			break;
+	}
+
+	return state;
+}
+
 const scrollReducer = (state = {}, action) => {
 	switch(action.type) {
 		case 'SET_NODE_FOR_SCROLL':
@@ -37,6 +47,7 @@ const scrollReducer = (state = {}, action) => {
 const reducers = combineReducers({
 	projects: projectsReducer,
 	activeClass: classReducer,
+	aDialogVisible: dialogReducer,
 	gotoComponent: scrollReducer
 })	
 

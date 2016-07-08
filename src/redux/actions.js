@@ -13,6 +13,13 @@ export function updateActive(payload) {
 	}
 }
 
+export function toggleDialogView(payload) {
+	return {
+		type: 'TOGGLE_DIALOG_VIEW',
+		payload
+	}
+} 
+
 export function setNodeForScroll(payload) {
 	return {
 		type: 'SET_NODE_FOR_SCROLL',

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Masonry from 'react-masonry-component';
 import { connect } from 'react-redux';
 import { scrolledToNode } from '../redux/actions.js';
-import ProjectElement from '../components/ProjectElement';
+import ProjectElement from './ProjectElement';
 
 var masonryOptions = {
     transitionDuration: 150,

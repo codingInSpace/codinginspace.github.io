@@ -19,6 +19,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 const initialState = {
 	projects,
 	activeClass: "top",
+	aDialogVisible: false,
 	gotoComponent: {
 		done: true,
 		component: null

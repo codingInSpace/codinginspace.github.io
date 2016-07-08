@@ -11,7 +11,6 @@ class Navbar extends Component {
 	}
 
   render() {
-
   	const activeClass = this.props.activeClass;
   	const contactClass = activeClass === "contact" ? "active" : "inactive";
   	const projectsClass = activeClass === "projects" ? "active" : "inactive";
@@ -23,7 +22,10 @@ class Navbar extends Component {
 		});
 
 		return (
-			<div className={navClasses}>
+			<div 
+				className={navClasses} 
+				style={this.props.aDialogVisible ? { opacity: '0' } : null }
+			>
 				<Grid>
 					<ul>
 						<a onClick={(e) => this.clickHandler(e, "top")}> 
@@ -48,7 +50,8 @@ Navbar.propTypes = {
 
 const mapStateToProps = (state) => {
 	return { 
-		activeClass: state.activeClass 
+		activeClass: state.activeClass,
+		aDialogVisible: state.aDialogVisible
 	};
 }
 
