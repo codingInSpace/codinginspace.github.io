@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Grid } from 'react-bootstrap';
 import classNames from 'classnames';
 import { setNodeForScroll } from '../actions.js';
+import Ripple from 'react-toolbox/lib/ripple';
 
 class Navbar extends Component {
 	clickHandler(event, idToView) {
@@ -16,6 +17,14 @@ class Navbar extends Component {
   	const projectsClass = activeClass === "projects" ? "active" : "inactive";
   	const topClass = activeClass === "top" ? "active" : "inactive";
 
+		const Link = (props) => (
+			<a {...props} style={{position: 'relative'}}> 
+				{props.children}
+			</a>
+		);
+
+		const RippleLink = Ripple({spread: 2})(Link)
+
   	let navClasses = classNames({
   		"custom-navbar": true,
   		"navtop": activeClass === "top"
@@ -28,15 +37,15 @@ class Navbar extends Component {
 			>
 				<Grid>
 					<ul>
-						<a onClick={(e) => this.clickHandler(e, "top")}> 
+						<RippleLink onClick={(e) => this.clickHandler(e, "top")}>
 							<li className={topClass}>Top</li> 
-						</a>
-						<a onClick={(e) => this.clickHandler(e, "projects")}> 
+						</RippleLink>
+						<RippleLink onClick={(e) => this.clickHandler(e, "projects")}> 
 							<li className={projectsClass}>Projects </li>
-						</a>
-						<a onClick={(e) => this.clickHandler(e, "contact")}> 
+						</RippleLink>
+						<RippleLink onClick={(e) => this.clickHandler(e, "contact")}> 
 							<li className={contactClass}> Contact </li>
-						</a>
+						</RippleLink>
 					</ul>
 				</Grid>
 			</div>
