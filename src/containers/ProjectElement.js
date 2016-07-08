@@ -13,8 +13,6 @@ class ProjectElement extends Component {
   };
 
 	toggleDialog = () => {
-    //this.setState({dialogActive: !this.state.dialogActive});
-
 		this.state = { 
 			dialogActive: !this.state.dialogActive
 		};
@@ -43,7 +41,7 @@ class ProjectElement extends Component {
 
 		let projectImages;
 		
-		if (elem.images) {
+		if (elem.images.length > 1) {
 			const images = elem.images.map((src) =>
 				<div><Image src={src} key={uid()} responsive/></div>
 			)
@@ -56,7 +54,7 @@ class ProjectElement extends Component {
 
 		} else {
       projectImages = (
-				<Image src={elem.imgSrc} responsive/>
+				<Image src={elem.images[0]} responsive/>
 			)
 		}
 
@@ -105,7 +103,7 @@ class ProjectElement extends Component {
 			<div>
 				<div className="project-element">
 					<Card style={{width: '100%'}} onClick={this.toggleDialog}>
-						<img src={elem.imgSrc}/>
+						<img src={elem.images[0]}/>
 						<CardTitle title={elem.title} />
 						<CardText> {tags} </CardText>
 					</Card>
