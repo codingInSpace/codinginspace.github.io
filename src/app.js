@@ -9,7 +9,7 @@ import ProjectsGallery from './containers/ProjectsGallery';
 import Footer from './containers/Footer';
 
 import { createStore } from 'redux';
-import reducers from './redux/reducers';
+import combinedReducers from './reducers/combinedReducers';
 import { Provider } from 'react-redux';
 import "!style!css!sass!./stylesheets/main.scss";
 import projects from './data/projects.js';
@@ -26,7 +26,7 @@ const initialState = {
 	}
 };
 
-const store = createStore(reducers, initialState,
+const store = createStore(combinedReducers, initialState,
 	window.devToolsExtension && window.devToolsExtension()
 );
 

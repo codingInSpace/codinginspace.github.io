@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Col } from 'react-bootstrap';
 import Waypoint from 'react-waypoint';
 import { connect } from 'react-redux';
-import { updateActive, scrolledToNode } from '../redux/actions.js';
+import { updateActive, scrolledToNode } from '../actions.js';
 
 class Footer extends Component {
 

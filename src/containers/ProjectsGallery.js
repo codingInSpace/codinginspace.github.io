@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import Masonry from 'react-masonry-component';
 import { connect } from 'react-redux';
-import { scrolledToNode } from '../redux/actions.js';
+import { scrolledToNode } from '../actions.js';
 import ProjectElement from './ProjectElement';
 
 var masonryOptions = {

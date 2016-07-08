@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Grid } from 'react-bootstrap';
 import classNames from 'classnames';
-import { setNodeForScroll } from '../redux/actions.js';
+import { setNodeForScroll } from '../actions.js';
 
 class Navbar extends Component {
 	clickHandler(event, idToView) {
@@ -24,7 +24,7 @@ class Navbar extends Component {
 		return (
 			<div 
 				className={navClasses} 
-				style={this.props.aDialogVisible ? { opacity: '0' } : null }
+				style={ this.props.aDialogVisible ? { opacity: '0' } : null }
 			>
 				<Grid>
 					<ul>

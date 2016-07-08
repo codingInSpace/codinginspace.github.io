@@ -4,7 +4,7 @@ import { Grid, Row, Col, Image } from 'react-bootstrap';
 import Icon from '@grove/react-font-awesome';
 import Waypoint from 'react-waypoint';
 import { connect } from 'react-redux';
-import { updateActive, scrolledToNode } from '../redux/actions.js';
+import { updateActive, scrolledToNode } from '../actions.js';
 
 class Header extends Component {
 

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { toggleDialogView } from '../redux/actions.js';
+import { toggleDialogView } from '../actions.js';
 import uid from '../utils/uniqueIdHack';
 import { Card, CardMedia, CardTitle, CardText  } from 'react-toolbox/lib/card';
 import Dialog from 'react-toolbox/lib/dialog';
