@@ -36,6 +36,7 @@ const projects = [
 		"id": "4",
 		"title": "React portfolio",
 		"imgSrc": "public/portfolio.jpg",
+		"images": ["public/portfolio.jpg", "public/portfolio2.png", "public/portfolio3.png", "public/portfolio4.png"],
 		"descShort": "React-redux SPA portfolio",
 		"descLong": "",
 		"teamDesc": "Personal project",

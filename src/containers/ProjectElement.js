@@ -5,6 +5,7 @@ import uid from '../utils/uniqueIdHack';
 import { Card, CardMedia, CardTitle, CardText  } from 'react-toolbox/lib/card';
 import Dialog from 'react-toolbox/lib/dialog';
 import { Image } from 'react-bootstrap';
+import Slider from 'react-slick';
 
 class ProjectElement extends Component {
 	state = {
@@ -27,8 +28,39 @@ class ProjectElement extends Component {
 
 	render() {
 		const elem = this.props.elem;
-		const tags = elem.tags.map((tag) => {
 
+		const sliderSettings = {
+			dots: true,
+      infinite: true,
+			draggable: true,
+			swipe: true,
+			adaptiveHeight: true,
+			centerMode: true,
+      speed: 500,
+      slidesToShow: 1,
+			slidesToScroll: 1
+		}
+
+		let projectImages;
+		
+		if (elem.images) {
+			const images = elem.images.map((src) =>
+				<div><Image src={src} key={uid()} responsive/></div>
+			)
+
+			projectImages = (
+				<Slider {...sliderSettings}>
+					{images}
+				</Slider>
+			)
+
+		} else {
+      projectImages = (
+				<Image src={elem.imgSrc} responsive/>
+			)
+		}
+
+		const tags = elem.tags.map((tag) => {
 			let bgcolor = '';
 			switch (tag) {
 				case 'Web':
@@ -82,13 +114,13 @@ class ProjectElement extends Component {
 				<Dialog className="project-dialog"
           actions={this.actions}
           active={this.state.dialogActive}
-          type="normal"
+          type="small"
           onEscKeyDown={this.toggleDialog}
           onOverlayClick={this.toggleDialog}
           title={elem.title}
         >
           <p>{elem.descShort}</p>
-          <Image src={elem.imgSrc} responsive/>
+					{projectImages}
           <p>{elem.descLong}</p>
 					{tags}
         </Dialog>
