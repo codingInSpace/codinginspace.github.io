@@ -12,19 +12,9 @@ import { createStore } from 'redux';
 import combinedReducers from './reducers/combinedReducers';
 import { Provider } from 'react-redux';
 import "!style!css!sass!./stylesheets/main.scss";
-import projects from './data/projects.js';
+import initialState from './data/initialState.js';
 
 import { Grid, Row, Col } from 'react-bootstrap';
-
-const initialState = {
-	projects,
-	activeClass: "top",
-	aDialogVisible: false,
-	gotoComponent: {
-		done: true,
-		component: null
-	}
-};
 
 const store = createStore(combinedReducers, initialState,
 	window.devToolsExtension && window.devToolsExtension()
@@ -40,7 +30,7 @@ class App extends React.Component {
 				<Grid>
 					<Row>
 						<Col smOffset={1}>
-							<ProjectsGallery projects={store.getState()}/>
+							<ProjectsGallery projects={store.getState().projects}/>
 						</Col>
 					</Row>
 				</Grid>
@@ -51,12 +41,7 @@ class App extends React.Component {
 	}
 }
 
-// Log the initial state
-console.log(store.getState())
-
-// Every time the state changes, log it
-// Note that subscribe() returns a function for unregistering the listener
-let unsubscribe = store.subscribe(() =>
+store.subscribe(() =>
   console.log(store.getState())
 )
 
