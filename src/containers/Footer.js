@@ -30,7 +30,7 @@ class Footer extends Component {
 		return (
 			<footer id="contact" ref="contact">
 				<Col sm={6} smOffset={3}>
-					<p>Some boring stuff goes here</p>
+					<p>Some important stuff goes here</p>
 				</Col>
 				<br/>
 				<Waypoint
