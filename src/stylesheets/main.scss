@@ -151,6 +151,10 @@ header {
 }
 
 .project-dialog {
+	::-webkit-scrollbar {
+		background: transparent;
+	}
+
 	p {
 		font-size: $headerTextSize;
 		line-height: $headerTextLHeight;
