@@ -19,6 +19,9 @@ $headerTextSizeSmaller: 12px;
 $headerTextLHeightSmaller: 16px;
 $elementTitleSize: 20px;
 
+/*misc*/
+$activeClassBorderSize: 3px;
+
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
 html {
@@ -74,12 +77,11 @@ body {
 	}
 
 	.active {
-		background-color: rgba(130, 130, 130, 0.2);
-		border-top: 2px solid #fff;
+		border-top: $activeClassBorderSize solid #fff;
 	}
 
 	.inactive {
-		border-top: 2px solid transparent;
+		border-top: $activeClassBorderSize solid transparent;
 	}
 }
 
