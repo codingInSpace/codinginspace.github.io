@@ -14,15 +14,13 @@ class Footer extends Component {
 		}
 	}
 
-	onEnter() {
-		if (this.props.activeClass !== "contact") {
-			this.props.updateClass("contact");
-		}
-	}
-
-  onLeave() {
-		if (this.props.activeClass !== "projects") {
-			this.props.updateClass("projects");
+	handleScroll = (props) => {
+		if (props.event && props.event.type === "scroll") {
+			if (props.currentPosition === "inside") {
+				this.props.updateClass("contact")
+			} else if (props.currentPosition === "below") {
+				this.props.updateClass("projects")
+			}
 		}
 	}
 
@@ -34,8 +32,8 @@ class Footer extends Component {
 				</Col>
 				<br/>
 				<Waypoint
-					onEnter={this.onEnter.bind(this)}
-					onLeave={this.onLeave.bind(this)}
+					onEnter={this.handleScroll}
+					onLeave={this.handleScroll}
 				/>
 			</footer>
 		);

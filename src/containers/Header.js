@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import { updateActive, scrolledToNode } from '../actions.js';
 
 class Header extends Component {
-
 	componentDidUpdate() {
 		if (!this.props.gotoComponent.done && this.props.gotoComponent.component === "top") {
 			ReactDOM.findDOMNode(this).scrollIntoView();
@@ -14,19 +13,16 @@ class Header extends Component {
 		}
 	}
 
-  onEnter() {
-		if (this.props.activeClass !== "top") {
-			this.props.updateClass("top");
-		}
-
-	}
-
-  onLeave() {
-		if (this.props.activeClass !== "projects") {
-			this.props.updateClass("projects");
+  handleScroll = (props) => {
+		if (props.event && props.event.type === "scroll") {
+			if (props.currentPosition === "inside") {
+				this.props.updateClass("top")
+			} else if (props.currentPosition === "above") {
+				this.props.updateClass("projects")
+			}
 		}
 	}
-	
+
   render() {
 		return (
 			<header id="top" ref="top">
@@ -37,8 +33,8 @@ class Header extends Component {
 						</Col>
 					</Row>
 					<Waypoint
-						onEnter={this.onEnter.bind(this)}
-						onLeave={this.onLeave.bind(this)}
+						onEnter={this.handleScroll}
+						onLeave={this.handleScroll}
 					/>
 					<Row>
 						<Col sm={6} smOffset={3}>
