@@ -11,7 +11,8 @@ const projects = [
 		"descShort": "Multiplayer VR Game for the Google Cardboard",
 		"descLong": "Pioneering game technology",
 		"teamDesc": "Team of seven",
-		"link": "",
+		"link": "https://www.youtube.com/watch?v=2eBE4bzM2sw",
+		"linkLabel": "Video",
 		"source": "https://github.com/AndroidHMD/TowerVR",
 		"tags": [ "Unity", "VR" ]
 	},
@@ -28,6 +29,7 @@ const projects = [
 		"descLong": "An experimental WebGL application where you can create and customize planets interactively.",
 		"teamDesc": "Team of five.",
 		"link": "https://codinginspace.github.io/myGalaxy",
+		"linkLabel": "Try it",
 		"source": "https://github.com/codingInSpace/myGalaxy",
 		"tags": [ "WebGL" ]
 	},
@@ -39,6 +41,7 @@ const projects = [
 		"descLong": "Water simulation using a Smoothed Particle Hydrodynamics method, governered by Navier-Stokes equations. The implementation is in C++ with rendering through OpenGL and particle calculations with OpenCL. The simulation is in real-time with properties adjustable by a small GUI.",
 		"teamDesc": "Team of five",
 		"link": "",
+		"linkLabel": "",
 		"source": "https://github.com/Hedlundaren/vattenoverhuvudet",
 		"tags": [ "C++", "OpenGL" ]
 	},
@@ -53,6 +56,7 @@ const projects = [
 		"descLong": "",
 		"teamDesc": "Personal project",
 		"link": "#",
+		"linkLabel": "View it",
 		"source": "https://github.com/codingInSpace/react-portfolio",
 		"tags": [ "Web" ]
 	},
@@ -63,7 +67,8 @@ const projects = [
 		"descShort": "Reverb simulation app",
 		"descLong": "An app built as part of a sound physics course. The user can upload or record a sound and combine it with a chosen environment's echo effect.",
 		"teamDesc": "Team of three",
-		"link": "https://reverbify.meteor.com",
+		"link": "",
+		"linkLabel": "",
 		"source": "https://github.com/codingInSpace/reverbify",
 		"tags": [ "Web", "App" ]
 	},
@@ -75,6 +80,7 @@ const projects = [
 		"descLong": "Staff portal for a local pub/club. I've worked on dynamic JavaScript- and some php-backend.",
 		"teamDesc": "Team of four",
 		"link": "",
+		"linkLabel": "",
 		"source": "",
 		"tags": [ "Web" ]
 	},
@@ -86,6 +92,7 @@ const projects = [
 		"descLong": "An Android app for students to use for quickly communicating where to meet to study, with the help of interactive maps.",
 		"teamDesc": "Team of five",
 		"link": "",
+		"linkLabel": "",
 		"source": "https://github.com/sovanny/Mapus",
 		"tags": [ "Android", "App" ]
 	}
