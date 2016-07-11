@@ -2,12 +2,13 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Grid } from 'react-bootstrap';
 import classNames from 'classnames';
-import { setNodeForScroll } from '../actions.js';
+import { setNodeForScroll, updateActive } from '../actions.js';
 import Ripple from 'react-toolbox/lib/ripple';
 
 class Navbar extends Component {
 	clickHandler(event, idToView) {
 		event.preventDefault();
+		this.props.updateClass(idToView)
 		this.props.setGotoComponent(idToView)
 	}
 
@@ -68,6 +69,10 @@ const mapDispatchToProps = (dispatch) => {
 	return { 
 		setGotoComponent: (comp) => {
 			dispatch(setNodeForScroll(comp))
+		},
+
+		updateClass: (newClass) => {
+			dispatch(updateActive(newClass))
 		}
 	}
 }
