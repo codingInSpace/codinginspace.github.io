@@ -29,7 +29,7 @@ class Header extends Component {
 				<Grid>
 					<Row>
 						<Col xs={8} xsOffset={2} sm={4} smOffset={4} >
-							<Image src="public/jonathan.png" circle responsive/><br></br>
+							<Image src="public/jonathan_compressed.jpg" circle responsive/><br></br>
 						</Col>
 					</Row>
 					<Waypoint
