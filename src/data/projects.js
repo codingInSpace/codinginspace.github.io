@@ -57,7 +57,7 @@ const projects = [
 		"teamDesc": "Personal project",
 		"link": "#",
 		"linkLabel": "View it",
-		"source": "https://github.com/codingInSpace/react-portfolio",
+		"source": "https://github.com/codingInSpace/codinginspace.github.io",
 		"tags": [ "Web" ]
 	},
 	{
