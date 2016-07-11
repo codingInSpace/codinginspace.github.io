@@ -1,11 +1,12 @@
 #### What
-Portfolio site built with react, redux, webpack
+Portfolio site built with react, redux, managed with Webpack, npm
 
-#### Installation
+#### Develop
 ```bash
-git clone git@github.com:codingInSpace/react-portfolio.git
-cd react-portfolio
-npm install
+git clone git@github.com:codingInSpace/codinginspace.github.io.git
+cd codinginspace.github.io
+npm i
+mkdir build
 npm run build
 ```
 
