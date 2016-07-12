@@ -20,10 +20,10 @@ const projects = [
 		"id": "2",
 		"title": "Galaxy Goose",
 		"images": [
-			"public/projects/galaxy/galaxygoose.png",
+			"public/projects/galaxy/galaxygoose.jpg",
 			"public/projects/galaxy/galaxy2.jpg",
 			"public/projects/galaxy/galaxy3.jpg",
-			"public/projects/galaxy/galaxy4.png"
+			"public/projects/galaxy/galaxy4.jpg"
 		],
 		"descShort": "Interactive WebGL application",
 		"descLong": "An experimental WebGL application where you can create and customize planets interactively.",
@@ -49,8 +49,8 @@ const projects = [
 		"id": "4",
 		"title": "React portfolio",
 		"images": [
-			"public/projects/portfolio/portfolio.png", 
-			"public/projects/portfolio/portfolio2.png"
+			"public/projects/portfolio/portfolio.jpg", 
+			"public/projects/portfolio/portfolio2.jpg"
 		],
 		"descShort": "React-redux SPA portfolio",
 		"descLong": "",
@@ -63,7 +63,7 @@ const projects = [
 	{
 		"id": "5",
 		"title": "Reverbify",
-		"images": ["public/projects/reverbify1.png"],
+		"images": ["public/projects/reverbify1.jpg"],
 		"descShort": "Reverb simulation app",
 		"descLong": "An app built as part of a sound physics course. The user can upload or record a sound and combine it with a chosen environment's echo effect.",
 		"teamDesc": "Team of three",
@@ -75,7 +75,7 @@ const projects = [
 	{
 		"id": "6",
 		"title": "Trappans Personalportal",
-		"images": ["public/projects/portalen.png"],
+		"images": ["public/projects/portalen.jpg"],
 		"descShort": "Club staff portal",
 		"descLong": "Staff portal for a local pub/club. I've worked on dynamic JavaScript- and some php-backend.",
 		"teamDesc": "Team of four",
@@ -87,7 +87,7 @@ const projects = [
 	{
 		"id": "7",
 		"title": "Mapus",
-		"images": ["public/projects/mapus1.png"],
+		"images": ["public/projects/mapus1.jpg"],
 		"descShort": "Study tool app",
 		"descLong": "An Android app for students to use for quickly communicating where to meet to study, with the help of interactive maps.",
 		"teamDesc": "Team of five",
