@@ -1,0 +1,78 @@
+header {
+	/*https://www.flickr.com/photos/triplea4/15042634190/*/
+	/*add fixed for stationary effect*/
+	background: url("/public/mountains_dark_compressed.jpg") no-repeat center center; 
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	height: 100vh;
+	width: 100%;
+	border-bottom: 1px solid $borderColor;
+
+	p {
+		text-align: center;
+		color: #fff;
+	}
+
+	.top-title {
+		font-size: $headerTextSize*2;
+		line-height: $headerTextLHeight*2;
+		margin-top: 10%;
+		border-top: 0.5px solid rgba(255, 255, 255, 0.4);
+		padding-top: 20px;
+	}
+
+	img {
+		margin-top: 10vh;
+		border-radius: 50%;
+		border: 7px solid $headerImgBorderColor;
+	}
+
+	.top-arrow {
+		position: absolute;
+		bottom: 0;
+		margin-bottom: 3vh;
+		color: transparentize(#fff, 0.2);
+		text-align: center;
+	}
+}
+
+@media screen and (min-width: ($medium-limit + 1px)) {
+	header {
+		p {
+			font-size: $headerTextSize;
+			line-height: $headerTextLHeight;
+		}
+
+		.top-title {
+			font-size: $headerTextSize*2;
+			line-height: $headerTextLHeight*2;
+		}
+
+		.top-arrow {
+			left: 47vw;
+			font-size: 6vw !important;
+		}
+	}
+}
+
+@media screen and (max-width: $medium-limit) {
+	header {
+		p {
+			font-size: $headerTextSizeSmaller;
+			line-height: $headerTextLHeightSmaller;
+		}
+
+		.top-title {
+			font-size: $headerTextSizeSmaller*2;
+			line-height: $headerTextLHeightSmaller*2;
+		}
+
+		.top-arrow {
+			left: 44vw;
+			font-size: 12vw !important;
+		}
+	}
+}
+

@@ -40,7 +40,7 @@ class Contact extends Component {
 	}
 }
 
-Footer.propTypes = {
+Contact.propTypes = {
 	updateClass: PropTypes.func.isRequired,
 	completeGotoComponent: PropTypes.func.isRequired
 }
@@ -64,4 +64,4 @@ const mapDispatchToProps = (dispatch) => {
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Footer)
+export default connect(mapStateToProps, mapDispatchToProps)(Contact)

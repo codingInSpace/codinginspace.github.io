@@ -1,0 +1,74 @@
+.gallery {
+	margin: 50px 0;
+	min-height: 80vh;
+	position: relative;
+}
+
+.project-element {
+	width: 300px;
+	margin-bottom: 20px;
+	cursor: pointer;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.project-tag {
+	font-size: $standardSize;
+	line-height: $standardLHeight;
+	color: $elementTagTextColor;
+	padding: 0px 4px;
+	margin: 0 2px 2px 2px;
+	float: left;
+	border-radius: 8px;
+}
+
+.project-dialog {
+	::-webkit-scrollbar {
+		background: transparent;
+	}
+
+	p {
+		font-size: $headerTextSize;
+		line-height: $headerTextLHeight;
+	}
+
+	img {
+		padding: 10px 0;
+	}
+
+	.project-buttons {
+		padding: 20px 0;
+
+		a {
+			padding: 0 10px;
+			margin-right: 10px;
+		}
+	}
+}
+
+@media screen and (min-width: ($medium-limit + 1px)) and (max-width: $large-limit) {
+	.gallery {
+		margin-left: 30px;
+	}
+}
+
+@media screen and (max-width: $medium-limit) {
+	.project-element {
+		margin: 0 0 20px 0;
+		width: 45%;
+
+		.project-tag {
+			padding: 2vw 4px;
+			margin: 0 1px 1px 1px;
+			font-size: 3vw !important;
+		}
+	}
+
+	.gallery {
+		margin-left: 2%;
+	}
+}
+
