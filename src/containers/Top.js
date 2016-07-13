@@ -5,7 +5,7 @@ import Waypoint from 'react-waypoint';
 import { connect } from 'react-redux';
 import { updateActive, scrolledToNode } from '../actions.js';
 
-class Header extends Component {
+class Top extends Component {
 	componentDidUpdate() {
 		if (!this.props.gotoComponent.done && this.props.gotoComponent.component === "top") {
 			ReactDOM.findDOMNode(this).scrollIntoView();
@@ -38,19 +38,19 @@ class Header extends Component {
 					/>
 					<Row>
 						<Col sm={6} smOffset={3}>
-							<p className="header-title">Jonathan Grangien</p>
+							<p className="top-title">Jonathan Grangien</p>
 							<p>I am a MSc. student of Computer Science in Media Technology at Linköping University, Sweden. I like programming, mainly websites, applications and graphics.</p>
 						</Col>
 					</Row>
 				</Grid>
 
-				<i className="material-icons header-arrow">keyboard_arrow_down</i>
+				<i className="material-icons top-arrow">keyboard_arrow_down</i>
 			</header>
 		);
 	}
 }
 
-Header.propTypes = {
+Top.propTypes = {
 	updateClass: PropTypes.func.isRequired,
 	completeGotoComponent: PropTypes.func.isRequired
 }
@@ -74,4 +74,4 @@ const mapDispatchToProps = (dispatch) => {
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default connect(mapStateToProps, mapDispatchToProps)(Top)

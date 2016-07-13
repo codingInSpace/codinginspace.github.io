@@ -4,9 +4,9 @@ import { render } from 'react-dom';
 import * as axios from 'axios';
 
 import Navbar from './containers/Navbar';
-import Header from './containers/Header';
+import Top from './containers/Top';
 import ProjectsGallery from './containers/ProjectsGallery';
-import Footer from './containers/Footer';
+import Contact from './containers/Contact';
 
 import { createStore } from 'redux';
 import combinedReducers from './reducers/combinedReducers';
@@ -26,7 +26,7 @@ class App extends React.Component {
   	<Provider store={store}>
 			<div>
 				<Navbar/>
-				<Header/>
+				<Top/>
 				<Grid>
 					<Row>
 						<Col smOffset={1}>
@@ -34,7 +34,7 @@ class App extends React.Component {
 						</Col>
 					</Row>
 				</Grid>
-				<Footer/>
+				<Contact/>
 			</div>
 		</Provider>
 		);

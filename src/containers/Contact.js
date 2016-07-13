@@ -5,7 +5,7 @@ import Waypoint from 'react-waypoint';
 import { connect } from 'react-redux';
 import { updateActive, scrolledToNode } from '../actions.js';
 
-class Footer extends Component {
+class Contact extends Component {
 
 	componentDidUpdate() {
 		if (!this.props.gotoComponent.done && this.props.gotoComponent.component === "contact") {
@@ -40,7 +40,7 @@ class Footer extends Component {
 	}
 }
 
-Footer.propTypes = {
+Contact.propTypes = {
 	updateClass: PropTypes.func.isRequired,
 	completeGotoComponent: PropTypes.func.isRequired
 }
@@ -64,4 +64,4 @@ const mapDispatchToProps = (dispatch) => {
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Footer)
+export default connect(mapStateToProps, mapDispatchToProps)(Contact)
