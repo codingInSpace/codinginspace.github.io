@@ -5,7 +5,7 @@ import Waypoint from 'react-waypoint';
 import { connect } from 'react-redux';
 import { updateActive, scrolledToNode } from '../actions.js';
 
-class Header extends Component {
+class Top extends Component {
 	componentDidUpdate() {
 		if (!this.props.gotoComponent.done && this.props.gotoComponent.component === "top") {
 			ReactDOM.findDOMNode(this).scrollIntoView();
