@@ -1,0 +1,78 @@
+.custom-navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 0;
+	width: 100%;
+	white-space: nowrap;
+	background-color: $navbarBgColor;
+	z-index: 1000;
+
+	-webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+
+	&.navtop {
+		background-color: transparent !important;
+		box-shadow: none;
+	}
+
+	ul {
+		list-style: none;
+		/*float: right;*/
+		margin-bottom: 0;
+		padding: 0;
+	}
+
+	li {
+		position: relative;
+		display: inline-block;
+		padding: 10px 30px;
+	}
+
+	a {
+		cursor: pointer;
+		text-decoration: none;
+		font-size: 16px;
+		color: #fff;
+	}
+
+	.active {
+		border-top: $activeClassBorderSize solid #fff;
+	}
+
+	.inactive {
+		border-top: $activeClassBorderSize solid transparent;
+	}
+}
+
+@media screen and (min-width: ($small-limit + 1px)) {
+	.custom-navbar {
+		box-shadow: 0 4px 2px -2px rgba(10, 10, 10, 0.8);
+
+		ul {
+			float: right;
+		}
+	}
+}
+
+@media screen and (max-width: $small-limit) {
+	.custom-navbar {
+		box-shadow: none;
+
+		ul {
+			text-align: center !important;
+		}
+
+		li {
+			padding: 10px 15px;
+		}
+
+		a {
+			font-size: 12px;
+		}
+	}
+}
+
