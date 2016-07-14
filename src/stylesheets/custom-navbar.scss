@@ -6,13 +6,13 @@
 	padding: 0;
 	width: 100%;
 	white-space: nowrap;
-	background-color: $navbarBgColor;
+	background-color: $darkColor;
 	z-index: 1000;
 
-	-webkit-transition: all 0.8s ease;
-  -moz-transition: all 0.8s ease;
-  -o-transition: all 0.8s ease;
-  transition: all 0.8s ease;
+	-webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 
 	&.navtop {
 		background-color: transparent !important;
@@ -21,7 +21,6 @@
 
 	ul {
 		list-style: none;
-		/*float: right;*/
 		margin-bottom: 0;
 		padding: 0;
 	}
@@ -29,7 +28,7 @@
 	li {
 		position: relative;
 		display: inline-block;
-		padding: 10px 30px;
+		padding: 15px 30px;
 	}
 
 	a {

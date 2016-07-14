@@ -37,15 +37,37 @@
 
 	img {
 		padding: 10px 0;
+		//max-height: 500px;
+		//max-width: auto;
+	}
+
+	.project-tag {
+		float: right !important;
+	}
+
+	.slider-left,
+	.slider-right {
+		position: fixed;
+		top: 25%;
+	}
+	.slider-left {
+		left: 3%;
+	}
+	.slider-right {
+		right: 3%;
 	}
 
 	.project-buttons {
 		padding: 20px 0;
 
 		a {
-			padding: 0 10px;
-			margin-right: 10px;
+			float: left;
+			margin: 0 0 10px 10px;
 		}
+	}
+
+	.project-desclong {
+		margin-top: 10px;
 	}
 }
 
