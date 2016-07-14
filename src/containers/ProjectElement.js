@@ -1,12 +1,16 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { toggleDialogView } from '../actions.js';
-import uid from '../utils/uniqueIdHack';
+
+import { Image, Row, Col } from 'react-bootstrap';
 import { Card, CardMedia, CardTitle, CardText  } from 'react-toolbox/lib/card';
+import { Button } from 'react-toolbox/lib/button';
+import RightSliderButton from '../components/RightSliderButton';
+import LeftSliderButton from '../components/LeftSliderButton';
+
 import Dialog from 'react-toolbox/lib/dialog';
-import { Image } from 'react-bootstrap';
 import Slider from 'react-slick';
-import {Button, IconButton} from 'react-toolbox/lib/button';
+import uid from '../utils/uniqueIdHack';
 
 class ProjectElement extends Component {
 	state = {
@@ -17,6 +21,18 @@ class ProjectElement extends Component {
 		this.state = { 
 			dialogActive: !this.state.dialogActive
 		};
+
+		// When dialog opened, check if several images
+		// are loaded in a slider, and force an update.
+		// This is because the initial image fails to load completely
+		if (this.state.dialogActive) {
+			if (this.props.elem.images.length > 1) {
+				var self = this;
+				setTimeout(function(){
+					self.forceUpdate();
+				}, 500);
+			}
+		}
 
 		this.props.toggleDialogView(this.state.dialogActive)
   }
@@ -30,21 +46,23 @@ class ProjectElement extends Component {
 
 		const sliderSettings = {
 			dots: true,
+			arrows: true,
+			prevArrow: <LeftSliderButton/>,
+			nextArrow: <RightSliderButton/>,
       infinite: true,
 			draggable: true,
 			swipe: true,
 			adaptiveHeight: true,
-			centerMode: true,
+			centerMode: false,
       speed: 500,
       slidesToShow: 1,
 			slidesToScroll: 1
 		}
 
 		let projectImages;
-		
 		if (elem.images.length > 1) {
 			const images = elem.images.map((src) =>
-				<div><Image src={src} key={uid()} responsive/></div>
+				<Image src={src} key={uid()} responsive/>
 			)
 
 			projectImages = (
@@ -128,7 +146,7 @@ class ProjectElement extends Component {
 			<div>
 				<div className="project-element">
 					<Card style={{width: '100%'}} onClick={this.toggleDialog}>
-						<img src={elem.images[0]}/>
+						<img src={elem.images[ elem.coverIndex ]}/>
 						<CardTitle title={elem.title} />
 						<CardText> {tags} </CardText>
 					</Card>
@@ -137,21 +155,34 @@ class ProjectElement extends Component {
 				<Dialog className="project-dialog"
           actions={this.actions}
           active={this.state.dialogActive}
-          type="small"
+          type="normal"
           onEscKeyDown={this.toggleDialog}
           onOverlayClick={this.toggleDialog}
           title={elem.title}
         >
-          <p>{elem.descShort}</p>
+        	<Row>
+        		<Col xs={10}>
+							<p>{elem.descShort}</p>
+						</Col>
+						<Col xs={2}>
+							{tags}
+						</Col>
+					</Row>
+
 					{projectImages}
-          <p>{elem.descLong}</p>
 
-					<div className="project-buttons">
-						{sourceButton}
-						{linkButton}
-					</div>
+					<Row>
+						<Col sm={9} md={8}>
+							<p className="project-desclong">{elem.descLong}</p>
+						</Col>
 
-					{tags}
+						<Col sm={3} md={4}>
+							<div className="project-buttons">
+								{linkButton}
+								{sourceButton}
+							</div>
+						</Col>
+					</Row>
         </Dialog>
 			</div>
 		);
