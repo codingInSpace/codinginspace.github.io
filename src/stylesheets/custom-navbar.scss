@@ -20,22 +20,16 @@
 	}
 
 	ul {
-		list-style: none;
 		margin-bottom: 0;
 		padding: 0;
+		min-width: 270px;
 	}
 
-	li {
+	button {
 		position: relative;
-		display: inline-block;
-		padding: 15px 30px;
-	}
-
-	a {
-		cursor: pointer;
-		text-decoration: none;
-		font-size: 16px;
-		color: #fff;
+		color: #fff !important;
+		font-weight: 400 !important;
+		border-radius: 0;
 	}
 
 	.active {
@@ -54,6 +48,10 @@
 		ul {
 			float: right;
 		}
+
+		button {
+			padding: 20px 10px 30px 10px !important;
+		}
 	}
 }
 
@@ -62,15 +60,16 @@
 		box-shadow: none;
 
 		ul {
-			text-align: center !important;
+			float: left;
 		}
 
-		li {
-			padding: 10px 15px;
+		button {
+			font-size: 12px !important;
+			padding: 20px 5px 30px 5px !important;
 		}
 
-		a {
-			font-size: 12px;
+		#navitem-container {
+			padding: 0 5px !important;
 		}
 	}
 }
