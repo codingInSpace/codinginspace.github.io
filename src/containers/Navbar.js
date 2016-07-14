@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Grid } from 'react-bootstrap';
 import classNames from 'classnames';
 import { setNodeForScroll, updateActive } from '../actions.js';
-import Ripple from 'react-toolbox/lib/ripple';
+import { Button } from 'react-toolbox/lib/button';
 
 class Navbar extends Component {
 	clickHandler(event, idToView) {
@@ -18,14 +18,6 @@ class Navbar extends Component {
   	const projectsClass = activeClass === "projects" ? "active" : "inactive";
   	const topClass = activeClass === "top" ? "active" : "inactive";
 
-		const Link = (props) => (
-			<a {...props} style={{position: 'relative'}}> 
-				{props.children}
-			</a>
-		);
-
-		const RippleLink = Ripple({spread: 2})(Link)
-
   	let navClasses = classNames({
   		"custom-navbar": true,
   		"navtop": activeClass === "top"
@@ -36,17 +28,26 @@ class Navbar extends Component {
 				className={navClasses} 
 				style={ this.props.aDialogVisible ? { opacity: '0' } : null }
 			>
-				<Grid>
+				<Grid id="navitem-container">
 					<ul>
-						<RippleLink onClick={(e) => this.clickHandler(e, "top")}>
-							<li className={topClass}>Top</li> 
-						</RippleLink>
-						<RippleLink onClick={(e) => this.clickHandler(e, "projects")}> 
-							<li className={projectsClass}>Projects </li>
-						</RippleLink>
-						<RippleLink onClick={(e) => this.clickHandler(e, "contact")}> 
-							<li className={contactClass}> Contact </li>
-						</RippleLink>
+						<Button 
+							label="Top" 
+							className={topClass} 
+							onClick={(e) => this.clickHandler(e, "top")}
+							flat 
+						/>
+						<Button 
+							label="Projects" 
+							className={projectsClass} 
+							onClick={(e) => this.clickHandler(e, "projects")}
+							flat 
+						/>
+						<Button 
+							label="Contact" 
+							className={contactClass} 
+							onClick={(e) => this.clickHandler(e, "contact")}
+							flat 
+						/>
 					</ul>
 				</Grid>
 			</div>
