@@ -1,16 +1,4 @@
-/*colors*/
-$bgBright: #fff;
-$darkColor:  #1f2d2d;
-$borderColor: $darkColor;
-$headerImgBorderColor: $darkColor;
-$navbarBgColor: rgba(30, 30, 30, 0.8);
-$navbarActiveBgColor: rgba(30, 30, 30, 0.9);
-
-$elementTitleColor: rgba(30, 30, 30, 0.05);
-$elementTitleTextColor: #000;
-$elementTagTextColor: #fff;
-
-/*font sizes*/
+/* font sizes */
 $standardSize: 13px;
 $standardLHeight: 20px;
 $headerTextSize: 20px;
@@ -19,14 +7,22 @@ $headerTextSizeSmaller: 12px;
 $headerTextLHeightSmaller: 16px;
 $elementTitleSize: 20px;
 
-/*misc*/
+/* misc sizes */
 $activeClassBorderSize: 3px;
-
 $small-limit: 400px;
 $medium-limit: 700px;
 $large-limit: 845px;
 
 @import url(https://fonts.googleapis.com/css?family=Roboto);
+@import './theme';
+
+/* theme excluded colors */
+$bgBright: #fff;
+$borderColor: $color-primary-dark;
+$headerImgBorderColor: $color-primary-dark;
+$elementTitleColor: rgba(30, 30, 30, 0.05);
+$elementTitleTextColor: #000;
+$elementTagTextColor: #fff;
 
 html {
 	font-family: 'Roboto', sans-serif;
