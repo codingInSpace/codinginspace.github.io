@@ -172,11 +172,11 @@ class ProjectElement extends Component {
 					{projectImages}
 
 					<Row>
-						<Col sm={9} md={8}>
+						<Col sm={8}>
 							<p className="project-desclong">{elem.descLong}</p>
 						</Col>
 
-						<Col sm={3} md={4}>
+						<Col sm={4}>
 							<div className="project-buttons">
 								{linkButton}
 								{sourceButton}
