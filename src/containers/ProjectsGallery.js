@@ -29,6 +29,9 @@ class ProjectsGallery extends Component {
 	handleScroll = (props) => {
 		// Jump from Top via button
 		if (props.previousPosition === "below" && props.currentPosition === "inside") {
+			if (props.event && props.event.type === "scroll")
+				return 
+
 			this.props.updateClass("projects")
 		}
 	}
