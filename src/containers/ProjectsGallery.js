@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import Masonry from 'react-masonry-component';
+import Waypoint from 'react-waypoint';
 import { connect } from 'react-redux';
-import { scrolledToNode } from '../actions.js';
+import { updateActive, scrolledToNode } from '../actions.js';
 import ProjectElement from './ProjectElement';
 
 var masonryOptions = {
@@ -16,9 +17,6 @@ var masonryOptions = {
 class ProjectsGallery extends Component {
 	constructor(props) {
 		super(props);
-		
-		// Log received props
-		//console.log(this.props.projects);
 	}
 
 	componentDidUpdate() {
@@ -27,7 +25,14 @@ class ProjectsGallery extends Component {
 			this.props.completeGotoComponent();
 		}
 	}
-	
+
+	handleScroll = (props) => {
+		// Jump from Top via button
+		if (props.previousPosition === "below" && props.currentPosition === "inside") {
+			this.props.updateClass("projects")
+		}
+	}
+
 	render() {
 		var childElements = this.props.projects.map(function(elem){
 			return (
@@ -36,16 +41,19 @@ class ProjectsGallery extends Component {
 		});
 
 		return (
-			<Masonry
-				id="projects"
-				ref="projects"
-				className={'gallery'} 
-				elementType={'div'}
-				options={masonryOptions}
-				disableImagesLoaded={false}
-			>
-				{childElements}
-			</Masonry>
+			<div>
+				<Waypoint onEnter={this.handleScroll} />
+				<Masonry
+					id="projects"
+					ref="projects"
+					className={'gallery'} 
+					elementType={'div'}
+					options={masonryOptions}
+					disableImagesLoaded={false}
+				>
+					{childElements}
+				</Masonry>
+			</div>
 		);
 	}
 }
@@ -63,6 +71,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return {
+		updateClass: (newClass) => {
+			dispatch(updateActive(newClass))
+		},
+
 		completeGotoComponent: () => {
 			dispatch(scrolledToNode(null))
 		}

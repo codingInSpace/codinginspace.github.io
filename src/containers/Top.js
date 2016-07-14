@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import { Grid, Row, Col, Image } from 'react-bootstrap';
 import Waypoint from 'react-waypoint';
 import { connect } from 'react-redux';
-import { updateActive, scrolledToNode } from '../actions.js';
+import { updateActive, setNodeForScroll, scrolledToNode } from '../actions.js';
+import { IconButton } from 'react-toolbox/lib/button';
 
 class Top extends Component {
 	componentDidUpdate() {
@@ -11,6 +12,10 @@ class Top extends Component {
 			ReactDOM.findDOMNode(this).scrollIntoView();
 			this.props.completeGotoComponent();
 		}
+	}
+
+	handleButtonClick = () => {
+		this.props.setGotoComponent("projects")
 	}
 
   handleScroll = (props) => {
@@ -44,7 +49,12 @@ class Top extends Component {
 					</Row>
 				</Grid>
 
-				<i className="material-icons top-arrow">keyboard_arrow_down</i>
+				<IconButton 
+					icon="keyboard_arrow_down" 
+					className="top-arrow" 
+					onClick={this.handleButtonClick}
+					accent
+				/>
 			</header>
 		);
 	}
@@ -66,6 +76,10 @@ const mapDispatchToProps = (dispatch) => {
 	return {
 		updateClass: (newClass) => {
 			dispatch(updateActive(newClass))
+		},
+
+		setGotoComponent: (comp) => {
+			dispatch(setNodeForScroll(comp))
 		},
 
 		completeGotoComponent: () => {
