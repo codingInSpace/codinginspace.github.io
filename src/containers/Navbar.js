@@ -2,22 +2,16 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Grid } from 'react-bootstrap';
 import classNames from 'classnames';
-import { setNodeForScroll, updateActive } from '../actions.js';
 import { Button } from 'react-toolbox/lib/button';
 
+import Scroll from 'react-scroll';
+var scroller = Scroll.scroller; 
+var Events = Scroll.Events;
+var Link = Scroll.Link;
+var activeClass = null;
+
 class Navbar extends Component {
-	clickHandler(event, idToView) {
-		event.preventDefault();
-		this.props.updateClass(idToView)
-		this.props.setGotoComponent(idToView)
-	}
-
   render() {
-  	const activeClass = this.props.activeClass;
-  	const contactClass = activeClass === "contact" ? "active" : "inactive";
-  	const projectsClass = activeClass === "projects" ? "active" : "inactive";
-  	const topClass = activeClass === "top" ? "active" : "inactive";
-
   	let navClasses = classNames({
   		"custom-navbar": true,
   		"navtop": activeClass === "top"
@@ -30,24 +24,42 @@ class Navbar extends Component {
 			>
 				<Grid id="navitem-container">
 					<ul>
-						<Button 
-							label="Top" 
-							className={topClass} 
-							onClick={(e) => this.clickHandler(e, "top")}
-							flat 
-						/>
-						<Button 
-							label="Projects" 
-							className={projectsClass} 
-							onClick={(e) => this.clickHandler(e, "projects")}
-							flat 
-						/>
-						<Button 
-							label="Contact" 
-							className={contactClass} 
-							onClick={(e) => this.clickHandler(e, "contact")}
-							flat 
-						/>
+					<Link 
+						to="top" 
+						activeClass="active" 
+						spy={true} 
+						smooth={true} 
+						duration={500}
+					>
+							<Button 
+								label="Top" 
+								flat 
+							/>
+						</Link>
+						<Link 
+							to="projects" 
+							activeClass="active" 
+							spy={true} 
+							smooth={true} 
+							duration={500}
+						>
+							<Button 
+								label="Projects" 
+								flat 
+							/>
+						</Link>
+						<Link
+							to="contact"
+							activeClass="active"
+							spy={true}
+							smooth={true}
+							duration={500}
+						>
+							<Button 
+								label="Contact" 
+								flat 
+							/>
+						</Link>
 					</ul>
 				</Grid>
 			</div>
@@ -66,16 +78,4 @@ const mapStateToProps = (state) => {
 	};
 }
 
-const mapDispatchToProps = (dispatch) => {
-	return { 
-		setGotoComponent: (comp) => {
-			dispatch(setNodeForScroll(comp))
-		},
-
-		updateClass: (newClass) => {
-			dispatch(updateActive(newClass))
-		}
-	}
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar)
+export default connect(mapStateToProps, null)(Navbar)

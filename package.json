@@ -33,6 +33,7 @@
     "react-dom": "^15.0.2",
     "react-masonry-component": "^4.0.4",
     "react-redux": "^4.4.5",
+    "react-scroll": "^1.0.24",
     "react-slick": "^0.12.2",
     "react-tap-event-plugin": "^1.0.0",
     "react-toolbox": "^1.0.2",
