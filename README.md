@@ -7,7 +7,6 @@ git clone git@github.com:codingInSpace/codinginspace.github.io.git
 cd codinginspace.github.io
 git checkout develop
 npm i
-mkdir build
 npm run build
 ```
 
