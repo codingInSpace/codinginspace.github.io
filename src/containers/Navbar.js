@@ -1,17 +1,27 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { updateActive } from '../actions.js';
+
 import { Grid } from 'react-bootstrap';
 import classNames from 'classnames';
 import { Button } from 'react-toolbox/lib/button';
 
 import Scroll from 'react-scroll';
 var scroller = Scroll.scroller; 
-var Events = Scroll.Events;
 var Link = Scroll.Link;
-var activeClass = null;
 
 class Navbar extends Component {
+	handleActiveClass(className) {
+		console.log("new active class " + className)
+		this.props.updateActiveClass(className)
+	}
+
   render() {
+		const activeClass = this.props.activeClass;
+		const contactClass = activeClass === "contact" ? "active" : "inactive";
+  	const projectsClass = activeClass === "projects" ? "active" : "inactive";
+  	const topClass = activeClass === "top" ? "active" : "inactive";
+
   	let navClasses = classNames({
   		"custom-navbar": true,
   		"navtop": activeClass === "top"
@@ -26,37 +36,43 @@ class Navbar extends Component {
 					<ul>
 					<Link 
 						to="top" 
-						activeClass="active" 
+						activeClass="test"
+						onSetActive={(className) => this.handleActiveClass(className)}
 						spy={true} 
 						smooth={true} 
 						duration={500}
 					>
 							<Button 
 								label="Top" 
+								className={topClass}
 								flat 
 							/>
 						</Link>
 						<Link 
 							to="projects" 
-							activeClass="active" 
+							activeClass="test"
+							onSetActive={(className) => this.handleActiveClass(className)}
 							spy={true} 
 							smooth={true} 
 							duration={500}
 						>
 							<Button 
 								label="Projects" 
+								className={projectsClass}
 								flat 
 							/>
 						</Link>
 						<Link
 							to="contact"
-							activeClass="active"
+							activeClass="test"
+							onSetActive={(className) => this.handleActiveClass(className)}
 							spy={true}
 							smooth={true}
 							duration={500}
 						>
 							<Button 
 								label="Contact" 
+								className={contactClass}
 								flat 
 							/>
 						</Link>
@@ -68,7 +84,7 @@ class Navbar extends Component {
 }
 
 Navbar.propTypes = {
-	setGotoComponent: PropTypes.func.isRequired
+	updateActiveClass: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {
@@ -78,4 +94,12 @@ const mapStateToProps = (state) => {
 	};
 }
 
-export default connect(mapStateToProps, null)(Navbar)
+const mapDispatchToProps = (dispatch) => {
+	return { 
+		updateActiveClass: (newClass) => {
+			dispatch(updateActive(newClass))
+		}
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar)
