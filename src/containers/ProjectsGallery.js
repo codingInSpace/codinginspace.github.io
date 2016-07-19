@@ -5,9 +5,6 @@ import { connect } from 'react-redux';
 import ProjectElement from './ProjectElement';
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import Scroll from 'react-scroll';
-var Element = Scroll.Element;
-
 var masonryOptions = {
     transitionDuration: 150,
 		gutter: 20,

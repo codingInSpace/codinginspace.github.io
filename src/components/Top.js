@@ -4,7 +4,6 @@ import { Grid, Row, Col, Image } from 'react-bootstrap';
 import { IconButton } from 'react-toolbox/lib/button';
 
 import Scroll from 'react-scroll';
-var Element = Scroll.Element;
 
 class Top extends Component {
   render() {
