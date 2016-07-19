@@ -4,9 +4,18 @@ import { Grid, Row, Col, Image } from 'react-bootstrap';
 import { IconButton } from 'react-toolbox/lib/button';
 
 import Scroll from 'react-scroll';
-var Element = Scroll.Element;
+let scroller = Scroll.scroller;
 
 class Top extends Component {
+
+	handleButtonClick() {
+		scroller.scrollTo('projects', {
+			duration: 800,
+			delay: 50,
+			smooth: true,
+		})
+	}
+
   render() {
 		return (
 			<header>

@@ -7,12 +7,10 @@ import classNames from 'classnames';
 import { Button } from 'react-toolbox/lib/button';
 
 import Scroll from 'react-scroll';
-var scroller = Scroll.scroller; 
 var Link = Scroll.Link;
 
 class Navbar extends Component {
 	handleActiveClass(className) {
-		console.log("new active class " + className)
 		this.props.updateActiveClass(className)
 	}
 
@@ -24,7 +22,8 @@ class Navbar extends Component {
 
   	let navClasses = classNames({
   		"custom-navbar": true,
-  		"navtop": activeClass === "top"
+  		"navtop": activeClass === "top",
+  		"no-shadow": activeClass === "contact"
 		});
 
 		return (

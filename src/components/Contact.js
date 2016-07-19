@@ -2,9 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { Col } from 'react-bootstrap';
 
-import Scroll from 'react-scroll';
-var Element = Scroll.Element;
-
 class Contact extends Component {
   render() {
 		return (

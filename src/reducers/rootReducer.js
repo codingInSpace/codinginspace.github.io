@@ -2,13 +2,11 @@ import { combineReducers } from 'redux';
 import projectsReducer from './projectsReducer'
 import classReducer from './classReducer'
 import dialogReducer from './dialogReducer'
-import scrollReducer from './scrollReducer'
 
-const combinedReducers = combineReducers({
+const rootReducer = combineReducers({
 	projects: projectsReducer,
 	activeClass: classReducer,
-	aDialogVisible: dialogReducer,
-	gotoComponent: scrollReducer
+	aDialogVisible: dialogReducer
 })	
 
-export default combinedReducers
+export default rootReducer

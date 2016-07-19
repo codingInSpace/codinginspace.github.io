@@ -20,16 +20,3 @@ export function toggleDialogView(payload) {
 	}
 } 
 
-export function setNodeForScroll(payload) {
-	return {
-		type: 'SET_NODE_FOR_SCROLL',
-		payload
-	}
-}
-
-export function scrolledToNode(payload) {
-	return {
-		type: 'SCROLLED_TO_NODE',
-		payload
-	}
-}
