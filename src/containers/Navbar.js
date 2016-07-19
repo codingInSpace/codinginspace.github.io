@@ -24,7 +24,8 @@ class Navbar extends Component {
 
   	let navClasses = classNames({
   		"custom-navbar": true,
-  		"navtop": activeClass === "top"
+  		"navtop": activeClass === "top",
+  		"no-shadow": activeClass === "contact"
 		});
 
 		return (
