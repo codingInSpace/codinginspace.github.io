@@ -9,7 +9,7 @@ import ProjectsGallery from './containers/ProjectsGallery';
 import Contact from './components/Contact';
 
 import { createStore } from 'redux';
-import combinedReducers from './reducers/combinedReducers';
+import rootReducer from './reducers/rootReducer';
 import { Provider } from 'react-redux';
 import "!style!css!sass!./stylesheets/main.scss";
 import initialState from './data/initialState.js';
@@ -17,7 +17,7 @@ import initialState from './data/initialState.js';
 import Scroll from 'react-scroll';
 var Element = Scroll.Element;
 
-const store = createStore(combinedReducers, initialState,
+const store = createStore(rootReducer, initialState,
 	window.devToolsExtension && window.devToolsExtension()
 );
 
