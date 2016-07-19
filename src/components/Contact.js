@@ -8,15 +8,13 @@ var Element = Scroll.Element;
 class Contact extends Component {
   render() {
 		return (
-			<Element name="contact">
-				<footer>
-					<Col sm={6} smOffset={3}>
-						<p>Some important stuff goes here</p>
-						<p>Oh god how did this get here im not gud with computar</p>
-					</Col>
-					<br/>
-				</footer>
-			</Element>
+			<footer>
+				<Col sm={6} smOffset={3}>
+					<p>Some important stuff goes here</p>
+					<p>Oh god how did this get here im not gud with computar</p>
+				</Col>
+				<br/>
+			</footer>
 		);
 	}
 }

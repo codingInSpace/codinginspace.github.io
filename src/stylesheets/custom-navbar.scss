@@ -15,7 +15,7 @@
   transition: all 0.4s ease;
 
 	&.navtop {
-		//background-color: transparent !important;
+		background-color: transparent !important;
 		box-shadow: none;
 	}
 
@@ -33,9 +33,7 @@
 	}
 
 	.active {
-		button {
-			border-top: $activeClassBorderSize solid #fff;
-		}
+		border-top: $activeClassBorderSize solid #fff;
 	}
 
 	.inactive {

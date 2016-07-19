@@ -29,24 +29,22 @@ class ProjectsGallery extends Component {
 		});
 
 		return (
-			<Element name="projects">
-				<Grid>
-					<Row>
-						<Col smOffset={1}>
-							<Masonry
-								id="projects"
-								ref="projects"
-								className={'gallery'} 
-								elementType={'div'}
-								options={masonryOptions}
-								disableImagesLoaded={false}
-							>
-								{childElements}
-							</Masonry>
-						</Col>
-					</Row>
-				</Grid>
-			</Element>
+			<Grid>
+				<Row>
+					<Col smOffset={1}>
+						<Masonry
+							id="projects"
+							ref="projects"
+							className={'gallery'} 
+							elementType={'div'}
+							options={masonryOptions}
+							disableImagesLoaded={false}
+						>
+							{childElements}
+						</Masonry>
+					</Col>
+				</Row>
+			</Grid>
 		);
 	}
 }
