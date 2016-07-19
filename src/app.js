@@ -14,6 +14,9 @@ import { Provider } from 'react-redux';
 import "!style!css!sass!./stylesheets/main.scss";
 import initialState from './data/initialState.js';
 
+import Scroll from 'react-scroll';
+var Element = Scroll.Element;
+
 const store = createStore(combinedReducers, initialState,
 	window.devToolsExtension && window.devToolsExtension()
 );
@@ -24,9 +27,15 @@ class App extends React.Component {
   	<Provider store={store}>
 			<div>
 				<Navbar/>
-				<Top/>
-				<ProjectsGallery projects={store.getState().projects}/>
-				<Contact/>
+				<Element name="top">
+					<Top/>
+				</Element>
+				<Element name="projects">
+					<ProjectsGallery projects={store.getState().projects}/>
+				</Element>
+				<Element name="contact">
+					<Contact/>
+				</Element>
 			</div>
 		</Provider>
 		);
