@@ -6,7 +6,7 @@ import * as axios from 'axios';
 import Navbar from './containers/Navbar';
 import Top from './components/Top';
 import ProjectsGallery from './containers/ProjectsGallery';
-import Contact from './components/Contact';
+import Contact from './containers/Contact';
 
 import { createStore } from 'redux';
 import rootReducer from './reducers/rootReducer';
