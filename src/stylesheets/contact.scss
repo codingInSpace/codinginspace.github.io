@@ -1,21 +1,17 @@
 footer {
 	position: relative;
 	width: 100%;
-	min-height: 100vh;
-	border-top: 1px solid $borderColor;
-	background-color: $color-primary-dark;
+	min-height: 50vh;
+	background-color: transparentize($color-primary, 0.9);
 
-	p {
-		margin-top: 20%;
-		text-align: center;
-		color: #fff;
+	.contact-content {
+		margin-top: 5%;
 	}
 
-	.bottom-element {
-		position: absolute;
-		bottom: 10%;
-		text-align: center;
+	h2 {
+		color: $color-primary-dark;
 	}
+
 }
 
 
