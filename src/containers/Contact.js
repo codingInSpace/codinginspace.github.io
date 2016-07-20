@@ -4,18 +4,24 @@ import { updateActive } from '../actions.js';
 import Waypoint from 'react-waypoint';
 
 class Contact extends Component {
-	handleWaypoint = () => {
-		if (this.props.activeClass !== "contact") {
+	handleWaypointEnter = (props) => {
+		if (props.event && props.event.type === "scroll" && this.props.activeClass !== "contact") {
 			this.props.updateActiveClass("contact")
 		}
 	}
 
+	handleWaypointLeave = (props) => {
+		if (props.event && props.event.type === "scroll" && this.props.activeClass !== "projects") {
+			this.props.updateActiveClass("projects")
+		}
+	}
+	
   render() {
 		return (
 			<footer>
 				<p>Some important stuff goes here</p>
 				<div className="bottom-element">
-					<Waypoint onEnter={this.handleWaypoint}/>
+					<Waypoint onEnter={this.handleWaypointEnter} onLeave={this.handleWaypointLeave}/>
 					<p>Oh god how did this get here im not gud with computar</p>
 				</div>
 				<br/>
