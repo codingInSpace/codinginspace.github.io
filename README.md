@@ -8,6 +8,7 @@ cd codinginspace.github.io
 git checkout develop
 npm i
 npm run build
+# load in browser how you want
 ```
 
 #### License
