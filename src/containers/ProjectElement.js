@@ -5,6 +5,7 @@ import { toggleDialogView } from '../actions.js';
 import { Image, Row, Col } from 'react-bootstrap';
 import { Card, CardMedia, CardTitle, CardText  } from 'react-toolbox/lib/card';
 import { Button } from 'react-toolbox/lib/button';
+import Tag from '../components/Tag';
 import RightSliderButton from '../components/RightSliderButton';
 import LeftSliderButton from '../components/LeftSliderButton';
 
@@ -102,43 +103,8 @@ class ProjectElement extends Component {
 		}
 
 		const tags = elem.tags.map((tag) => {
-			let bgcolor = '';
-			switch (tag) {
-				case 'Web':
-					bgcolor = "#8764aa";
-					break;
-				case "C++":
-					bgcolor = "#85aad0";
-					break;
-				case "OpenGL":
-					bgcolor = "#eeaacc";
-					break;
-				case "WebGL":
-					bgcolor = "#907ea1";
-					break;
-				case "App":
-					bgcolor = "#a96161";
-					break;
-				case "Android":
-					bgcolor = "#a85050";
-					break;
-				case "Unity":
-					bgcolor = "#5e9b8d";
-					break;
-				case "VR":
-					bgcolor = "#5a8dad";
-					break;
-				default:
-					bgcolor = "#4d4d4d";
-					break;
-			}
-
-			const colorStyle = {
-				backgroundColor: bgcolor
-			}
-
 			return (
-				<span className="project-tag" style={colorStyle} key={uid()}>{tag}</span>
+				<Tag key={uid()} text={tag}/>
 			);
 		});
 
