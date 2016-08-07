@@ -8,7 +8,8 @@
   },
   "main": "index.html",
   "scripts": {
-    "build": "webpack --debug",
+    "build": "export NODE_ENV=development && webpack --debug",
+    "deploy": "export NODE_ENV=production && webpack -p",
     "serve": "webpack-dev-server --progress --colors --hot --config ./webpack.config.js"
   },
   "author": "Jonathan Grangien",

@@ -1,8 +1,9 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
+const prod = process.env.NODE_ENV == 'production';
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-	devtool: 'inline-source-map',
+	devtool: prod ? '' : 'cheap-module-source-map',
 	entry: [
     'webpack-hot-middleware/client',
     './src/app.js'
@@ -11,11 +12,21 @@ module.exports = {
     path: './build/',
     filename: 'bundle.js'
   },
-	plugins: [
+	plugins: prod ? [
+		new webpack.DefinePlugin({
+			'process.env': {
+				'NODE_ENV': JSON.stringify('production')
+			}
+		}),
+		new webpack.optimize.UglifyJsPlugin({minimize: true}),
 		new ExtractTextPlugin('react-toolbox.css', { allChunks: true }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
-  ],
+	] : [
+		new ExtractTextPlugin('react-toolbox.css', { allChunks: true }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+	],
 	module: {
 		loaders: [
 			{
