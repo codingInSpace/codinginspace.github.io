@@ -39,7 +39,7 @@ class Navbar extends Component {
 						onSetActive={(className) => this.handleActiveClass(className)}
 						spy={true} 
 						smooth={true} 
-						duration={500}
+						duration={750}
 					>
 							<Button 
 								label="Top" 
@@ -53,7 +53,7 @@ class Navbar extends Component {
 							onSetActive={(className) => this.handleActiveClass(className)}
 							spy={true} 
 							smooth={true} 
-							duration={500}
+							duration={750}
 						>
 							<Button 
 								label="Projects" 
@@ -67,7 +67,7 @@ class Navbar extends Component {
 							onSetActive={(className) => this.handleActiveClass(className)}
 							spy={true}
 							smooth={true}
-							duration={500}
+							duration={750}
 						>
 							<Button 
 								label="Contact" 
