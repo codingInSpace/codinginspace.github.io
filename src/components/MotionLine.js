@@ -8,9 +8,18 @@ class MotionLine extends Component {
 	}
 
 	lineInView = (props) => {
-		if (props.event && props.event.type === "scroll" && !this.state.lineAnimated) {
+		console.log(props)
+		if (props.currentPosition === "inside" && !this.state.lineWillAnimate) {
 			this.state = {
 				lineWillAnimate: true
+			}
+		}
+	}
+
+	lineGoesOutOfView = (props) => {
+		if (this.state.lineWillAnimate) {
+			this.state = {
+				lineWillAnimate: false 
 			}
 		}
 	}
@@ -30,6 +39,7 @@ class MotionLine extends Component {
 						}} />
 						<Waypoint
 							onEnter={this.lineInView}
+							onLeave={this.lineGoesOutOfView}
 						/>
 					</div>
 				}
