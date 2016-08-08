@@ -9,13 +9,15 @@ let scroller = Scroll.scroller;
 
 class Top extends Component {
 	state = {
-		imageWillAnimate: false
+		imageWillAnimate: false,
+		lineWillAnimate: false
 	}
 
 	componentDidMount() {
 		setTimeout(() => {
 			this.setState({
-				imageWillAnimate: true 
+				imageWillAnimate: true,
+				lineWillAnimate: true
 			})
 		}, 500)
 	}
@@ -54,7 +56,21 @@ class Top extends Component {
 					</Row>
 					<Row>
 						<Col sm={6} smOffset={3}>
-							<p className="top-title">Jonathan Grangien</p>
+							<p className="top-title">
+								<Motion defaultStyle={{x: 0}} style={{x: this.state.lineWillAnimate ? spring(100, [3, 30]) : 0}}>
+									{({x}) =>
+										<div style={{
+												marginLeft: (50 - x/2) + '%',
+												width: x + '%',
+												marginTop: '10%',
+												paddingTop: '5%',
+												borderTop: '0.5px solid rgba(255, 255, 255, 0.4)'
+											}}
+										/>
+									}
+								</Motion>
+								Jonathan Grangien
+							</p>
 							<p>I am a MSc. student of Computer Science in Media Technology at Linköping University, Sweden. I like programming, mainly websites, applications and graphics.</p>
 						</Col>
 					</Row>
