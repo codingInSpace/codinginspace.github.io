@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { updateActive } from '../actions.js';
 import { Grid, Col } from 'react-bootstrap';
 import Waypoint from 'react-waypoint';
+import MotionLine from '../components/MotionLine';
 
 class Contact extends Component {
 	handleWaypointEnter = (props) => {
@@ -21,6 +22,7 @@ class Contact extends Component {
 		return (
 			<footer>
 				<Grid>
+					<MotionLine/>
 					<div className="contact-content">
 						<Col sm={4} smOffset={3}>
 							<h2>Info</h2>	
