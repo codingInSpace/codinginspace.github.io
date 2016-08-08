@@ -8,7 +8,6 @@ class MotionLine extends Component {
 	}
 
 	lineInView = (props) => {
-		console.log(props)
 		if (props.currentPosition === "inside" && !this.state.lineWillAnimate) {
 			this.state = {
 				lineWillAnimate: true
