@@ -13,11 +13,11 @@ class Top extends Component {
 	}
 
 	componentDidMount() {
-		setInterval(() => {
+		setTimeout(() => {
 			this.setState({
 				imageWillAnimate: true 
 			})
-		}, 300)
+		}, 500)
 	}
 
 	handleButtonClick() {
