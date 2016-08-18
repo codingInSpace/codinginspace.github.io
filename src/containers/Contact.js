@@ -26,11 +26,11 @@ class Contact extends Component {
 					<div className="contact-content">
 						<Col sm={4} smOffset={3}>
 							<h2>Info</h2>	
-							<p>mail me</p>
+							<p>mail me pls</p>
 						</Col>
 						<Col sm={4}>
 							<h2>Follow</h2>
-							<p>check my fb</p>
+							<p>check my lnikedin</p>
 						</Col>
 					</div>
 					<div className="waypoint-container">
