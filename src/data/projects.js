@@ -1,6 +1,22 @@
 const projects = [
 	{
-		"id": "1",
+		"id": "aKei5Phu",
+		"title": "Winterwise",
+		"images": [
+			"public/projects/winterwise/Vscmv51.jpg",
+			"public/projects/winterwise/QB1rvSz.jpg"
+		],
+		"coverIndex": "0",
+		"descShort": "Hackaton project for tracking snow plowing vehicles in real time",
+		"descLong": "This is a system made as a Hackaton project for tracking road condintions during winter time in Sweden. A prototype for a gps tracker and a tablet application was made to track vehicles that plow, salt or gravel the roads, and the state of treatment as well as coordinates and timestamps are sent to a Node server. The server processes and distributes the data to a react+redux+sass webapp, and routes for vehicles are displayed in a Google Maps implementation. The display of treated roads are faded with time so as to show the best approximated current state of roads. This way users of the web app can see what roads are being and have been treated, what state they're in.",
+		"teamDesc": "Team of four",
+		"link": "",
+		"linkLabel": "",
+		"source": "",
+		"tags": [ "Web", "App", "Android" ]
+	},
+	{
+		"id": "Iewius0i",
 		"title": "TowerVR",
 		"images": [
 			"public/projects/towervr/towervr2.jpg",
@@ -18,7 +34,7 @@ const projects = [
 		"tags": [ "Unity", "VR" ]
 	},
 	{
-		"id": "2",
+		"id": "geK0chee",
 		"title": "Galaxy Goose",
 		"images": [
 			"public/projects/galaxy/galaxy2.jpg",
@@ -49,7 +65,7 @@ const projects = [
 		"tags": [ "C++", "OpenGL" ]
 	},
 	{
-		"id": "4",
+		"id": "aiTh8zah",
 		"title": "React portfolio",
 		"images": [
 			"public/projects/portfolio/portfolio.jpg", 
@@ -65,7 +81,7 @@ const projects = [
 		"tags": [ "Web" ]
 	},
 	{
-		"id": "5",
+		"id": "Kav0Eith",
 		"title": "Reverbify",
 		"images": ["public/projects/reverbify1.jpg"],
 		"coverIndex": "0",
@@ -78,7 +94,7 @@ const projects = [
 		"tags": [ "Web", "App" ]
 	},
 	{
-		"id": "6",
+		"id": "uu8Ailee",
 		"title": "Trappans Personalportal",
 		"images": ["public/projects/portalen.jpg"],
 		"coverIndex": "0",
@@ -91,7 +107,7 @@ const projects = [
 		"tags": [ "Web" ]
 	},
 	{
-		"id": "7",
+		"id": "ota9aeDo",
 		"title": "Mapus",
 		"images": ["public/projects/mapus1.jpg"],
 		"coverIndex": "0",
