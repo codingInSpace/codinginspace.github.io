@@ -49,22 +49,6 @@ const projects = [
 		"tags": [ "C++", "OpenGL" ]
 	},
 	{
-		"id": "4",
-		"title": "React portfolio",
-		"images": [
-			"public/projects/portfolio/portfolio.jpg", 
-			"public/projects/portfolio/portfolio2.jpg"
-		],
-		"coverIndex": "0",
-		"descShort": "React-redux SPA portfolio",
-		"descLong": "",
-		"teamDesc": "Personal project",
-		"link": "#",
-		"linkLabel": "View it",
-		"source": "https://github.com/codingInSpace/codinginspace.github.io",
-		"tags": [ "Web" ]
-	},
-	{
 		"id": "5",
 		"title": "Reverbify",
 		"images": ["public/projects/reverbify1.jpg"],
