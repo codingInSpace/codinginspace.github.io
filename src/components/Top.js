@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Grid, Row, Col, Image } from 'react-bootstrap';
 import { IconButton } from 'react-toolbox/lib/button';
 import { Motion, spring, presets } from 'react-motion';
+import Medallion from './Medallion';
 
 import Scroll from 'react-scroll';
 let scroller = Scroll.scroller;
@@ -34,7 +35,7 @@ class Top extends Component {
 				<Grid>
 					<Row>
 						<Col xs={8} xsOffset={2} sm={4} smOffset={4} >
-
+							<Medallion className="medallion"/>
 							<br></br>
 						</Col>
 					</Row>
