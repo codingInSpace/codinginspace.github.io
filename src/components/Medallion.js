@@ -51,14 +51,15 @@ class Medallion extends React.Component {
 					<mesh
 						rotation={this.state.cubeRotation}
 					>
-						<boxGeometry
-							width={1}
-							height={1}
-							depth={1}
+						<cylinderGeometry
+							radiusTop={3}
+							radiusBottom={3}
+							radialSegments={32}
+							height={0.1}
 						/>
-						<meshBasicMaterial
-							color={0x00ff00}
-						/>
+						<meshBasicMaterial>
+							<texture url={"../../public/jonathan_compressed.jpg"}/>
+						</meshBasicMaterial>
 					</mesh>
 				</scene>
 			</React3>
