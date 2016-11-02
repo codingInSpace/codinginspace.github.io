@@ -19,10 +19,10 @@ header {
 		line-height: $headerTextLHeight*2;
 	}
 
-	img {
+	.medallion {
 		margin-top: 10vh;
-		border-radius: 50%;
-		border: 7px solid $headerImgBorderColor;
+		//border-radius: 50%;
+		//border: 7px solid $headerImgBorderColor;
 	}
 
 	.top-arrow {
@@ -34,6 +34,11 @@ header {
 		color: transparentize(#fff, 0.2);
 		text-align: center;
 	}
+}
+
+.medallion {
+	width: 100%;
+	height: 100%;
 }
 
 @media screen and (min-width: ($medium-limit + 1px)) {

@@ -52,7 +52,7 @@ const projects = [
 		"tags": [ "WebGL" ]
 	},
 	{
-		"id": "3",
+		"id": "vbTa8zg2",
 		"title": "SPH fluid sim",
 		"images": ["public/projects/watersim.jpg"],
 		"coverIndex": "0",
