@@ -5,64 +5,78 @@ import Dimensions from 'react-dimensions';
 
 class Medallion extends React.Component {
 	state = {
-			cubeRotation: new THREE.Euler()
+		cubeRotation: new THREE.Euler(0, Math.PI/2, 0)
 	};
 
   constructor(props, context) {
     super(props, context);
 
-    // construct the position vector here, because if we use 'new' within render,
-    // React will think that things have changed when they have not.
-    this.cameraPosition = new THREE.Vector3(0, 0, 5);
+    this.cameraPosition = new THREE.Vector3(0, 5, 0);
+    this.medallionPosition = new THREE.Vector3(0, 0, 0);
 
     this._onAnimate = () => {
 			this.setState({
-				dimensions: this.state.dimensions,
 				cubeRotation: new THREE.Euler(
-					this.state.cubeRotation.x + 0.1,
-					this.state.cubeRotation.y + 0.1,
-					0
-				),
-      });
+					this.state.cubeRotation.x, 
+					this.state.cubeRotation.y,
+					this.state.cubeRotation.z + 0.005
+				)
+			});
     };
+
+    this._onRendered = (renderer) => {
+			console.log("Renderer " + renderer + " updated")
+		};
   }
+
+	//componentDidMount() {
+		//const camera = this.refs.camera;
+		//const medallion = this.refs.medallion;
+		//medallion.rotation.y = Math.PI / 2;
+	//}
 
   render() {
 		const size = this.props.containerWidth
 
 		return (
-			<React3
-				mainCamera="camera" // this points to the perspectiveCamera which has the name set to "camera" below
-				width={size}
-				height={size}
-				alpha={true}
-				onAnimate={this._onAnimate}
-			>
-				<scene>
-					<perspectiveCamera
-						name="camera"
-						fov={75}
-						aspect={size / size}
-						near={0.1}
-						far={1000}
-
-						position={this.cameraPosition}
-					/>
-					<mesh
-						rotation={this.state.cubeRotation}
-					>
-						<cylinderGeometry
-							radiusTop={3}
-							radiusBottom={3}
-							radialSegments={32}
-							height={0.1}
+			<div ref="container">
+				<React3
+					mainCamera="camera" // this points to the perspectiveCamera which has the name set to "camera" below
+					width={size}
+					height={size}
+					alpha={true}
+					onAnimate={this._onAnimate}
+					onRendererUpdated={this._onRendered}
+				>
+					<scene>
+						<perspectiveCamera
+							name="camera"
+							fov={75}
+							aspect={size / size}
+							near={0.1}
+							far={1000}
+							position={this.cameraPosition}
+							lookAt={this.medallionPosition}
+							ref="camera"
 						/>
-						<meshBasicMaterial>
-							<texture url={"../../public/jonathan_compressed.jpg"}/>
-						</meshBasicMaterial>
-					</mesh>
-				</scene>
-			</React3>
+						<mesh
+							ref="medallion"
+							rotation={this.state.cubeRotation}
+							position={this.medallionPosition}
+						>
+							<cylinderGeometry
+								radiusTop={3}
+								radiusBottom={3}
+								radialSegments={32}
+								height={0.1}
+							/>
+							<meshBasicMaterial>
+								<texture url={"../../public/jonathan_compressed.jpg"}/>
+							</meshBasicMaterial>
+						</mesh>
+					</scene>
+				</React3>
+			</div>
 		);
   }
 }

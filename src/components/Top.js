@@ -35,7 +35,9 @@ class Top extends Component {
 				<Grid>
 					<Row>
 						<Col xs={8} xsOffset={2} sm={4} smOffset={4} >
-							<Medallion className="medallion"/>
+							<div className="medallion">
+								<Medallion />
+							</div>
 							<br></br>
 						</Col>
 					</Row>
