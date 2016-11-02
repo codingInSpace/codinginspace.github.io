@@ -18,8 +18,8 @@ class Medallion extends React.Component {
 			this.setState({
 				cubeRotation: new THREE.Euler(
 					this.state.cubeRotation.x, 
-					this.state.cubeRotation.y,
-					this.state.cubeRotation.z + 0.005
+					this.state.cubeRotation.y + 0.0005,
+					this.state.cubeRotation.z + 0.0005
 				)
 			});
     };
